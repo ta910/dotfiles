@@ -33,6 +33,9 @@ call dein#add('Shougo/neosnippet-snippets')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+" it enable to input continuously on a keyboard
+call dein#add('kana/vim-submode')
+
 
 " ディレクトリツリー
 call dein#add('scrooloose/nerdtree')

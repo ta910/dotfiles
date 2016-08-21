@@ -7,6 +7,16 @@ if [ ! -d ~/.vim/bundle/ ]; then
 fi
 
 function create_symlink() {
+  if [ ! -d ~/.vim/docs/ ]; then 
+    mkdir -p ~/.vim/docs/
+  fi
+
+  docs=(vim-submode)
+  for doc in ${docs[@]}; do
+    echo "${doc}"
+    ln -sf ~/dotfiles/vim/docs/${doc}.md ~/.vim/docs/${doc}.md
+  done
+
   if [ ! -d ~/.vim/after/ ]; then
     mkdir -p ~/.vim/after/plugin
     ln -sf ~/dotfiles/vim/after/release-comment.vim ~/.vim/after/plugin/release-comment.vim
