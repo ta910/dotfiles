@@ -9,7 +9,7 @@
 "
 "----------------------------------------------------------------------------------------------
 
-"=== Bundle
+"=== Bundle only call 
 
 "dein Scripts-----------------------------
 if &compatible
@@ -32,6 +32,10 @@ call dein#add('Shougo/neosnippet-snippets')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+
+" ディレクトリツリー
+call dein#add('scrooloose/nerdtree')
 
 " Required:
 call dein#end()
