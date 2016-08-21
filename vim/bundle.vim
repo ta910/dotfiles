@@ -48,6 +48,9 @@ call dein#add('scrooloose/nerdtree')
 " light and configurable statusline/tabline 
 call dein#add('itchyny/lightline.vim')
 
+" real time markdown preview plugin for vim
+call dein#add('miyakogi/livemark.vim')
+
 " Required:
 call dein#end()
 

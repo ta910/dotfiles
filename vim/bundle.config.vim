@@ -98,6 +98,8 @@ if dein#tap('ctrlp.vim')
   endif
 endif
 
+"=== :ctrlp
+"==========================================
 if dein#tap('lightline.vim')
   set laststatus=2
   let g:lightline = {
@@ -158,4 +160,24 @@ if dein#tap('lightline.vim')
   function! LightLineMode()
     return winwidth(0) > 60 ? lightline#mode() : ''
   endfunction
+endif
+
+"=== :livemark.vim
+"==============================================================================================
+if dein#tap('livemark.vim')
+  call dein#config({
+    \ 'autoload': {
+      \ 'commands': 'LiveMark',
+    \ }
+  \ })
+
+  let g:livemark_browser = "open %s"
+  let g:livemark_browser_port = 8089
+  let g:livemark_vim_port = 8090
+
+  " let g:livemark_no_default_js = 1
+  " let g:livemark_no_default_css = 1
+  " let g:livemark_js_files = [expand('~/path/to/your/js_file.js')]
+  " let g:livemark_css_files = [expand('~/path/to/your/css_file.css')]
+
 endif
