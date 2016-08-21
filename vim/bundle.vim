@@ -36,6 +36,11 @@ call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 " it enable to input continuously on a keyboard
 call dein#add('kana/vim-submode')
 
+" Search File
+call dein#add('ctrlpvim/ctrlp.vim')
+
+"文字列検索
+call dein#add('rking/ag.vim')
 
 " ディレクトリツリー
 call dein#add('scrooloose/nerdtree')
