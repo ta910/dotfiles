@@ -10,4 +10,8 @@
 "----------------------------------------------------------------------------------------------
 
 "=== Loading
-source ~/.vimr/.vimrc.basic
+source ~/.vim/.vimrc.basic
+source ~/.vim/.vimrc.bundle
+source ~/.vim/.vimrc.bundle.config
+source ~/.vim/.vimrc.keybind
+source ~/.vim/.vimrc.color
