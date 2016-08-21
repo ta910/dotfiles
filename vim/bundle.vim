@@ -45,6 +45,9 @@ call dein#add('rking/ag.vim')
 " ディレクトリツリー
 call dein#add('scrooloose/nerdtree')
 
+" light and configurable statusline/tabline 
+call dein#add('itchyny/lightline.vim')
+
 " Required:
 call dein#end()
 
