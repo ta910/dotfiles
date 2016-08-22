@@ -25,9 +25,19 @@ function create_symlink() {
   fi
   if [ -d ~/.vim/colors/ ]; then
     ln -sf ~/dotfiles/vim/colors/solarized.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/atom-dark-256.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/atom-dark.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/badwolf.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/goodwolf.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/vividchalk.vim ~/.vim/colors
   else
     mkdir ~/.vim/colors/
     ln -sf ~/dotfiles/vim/colors/solarized.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/atom-dark-256.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/atom-dark.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/badwolf.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/goodwolf.vim ~/.vim/colors
+    ln -sf ~/dotfiles/vim/colors/vividchalk.vim ~/.vim/colors
   fi
 
   files=(basic bundle bundle.config color indent keybind)
