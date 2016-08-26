@@ -45,6 +45,9 @@ set pumheight=10        "補完ポップアップの高さ
 set vb t_vb=            "ビープ音消す
 set re=0                "軽くなるらしい
 set statusline=2        "ステータルラインの表示
+set synmaxcol=50       "一行でハイライトする文字数
+
+
 
 " スワップファイルファイルの設定(Readonly)
 augroup swapchoice-readonly
