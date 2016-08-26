@@ -45,7 +45,7 @@ set pumheight=10        "補完ポップアップの高さ
 set vb t_vb=            "ビープ音消す
 set re=0                "軽くなるらしい
 set statusline=2        "ステータルラインの表示
-set synmaxcol=50       "一行でハイライトする文字数
+set synmaxcol=150       "一行でハイライトする文字数
 
 
 
@@ -54,3 +54,5 @@ augroup swapchoice-readonly
   autocmd!
   autocmd SwapExists * let v:swapchoice = 'o'
 augroup END
+" 行末の余分なスペース削除
+autocmd BufWritePre * :%s/\s\+$//ge
