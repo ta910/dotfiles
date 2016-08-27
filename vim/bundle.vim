@@ -51,6 +51,8 @@ call dein#add('itchyny/lightline.vim')
 " real time markdown preview plugin for vim
 call dein#add('miyakogi/livemark.vim')
 
+" slim syntax highlihging
+call dein#add('slim-template/vim-slim')
 " Required:
 call dein#end()
 
