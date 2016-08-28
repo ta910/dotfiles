@@ -49,6 +49,18 @@ inoremap <C-u> <BackSpace>
 inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
 inoremap <C-s> <C-o>$
+"----------- auto brackets ----------
+inoremap { {}<LEFT>
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap (<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap '<Enter> ''<Left><CR><ESC><S-o>
+inoremap "<Enter> ""<Left><CR><ESC><S-o>
+
 
 "=== MacVim
 "==========================
