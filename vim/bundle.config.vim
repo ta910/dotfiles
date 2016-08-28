@@ -181,6 +181,9 @@ if dein#tap('livemark.vim')
   " let g:livemark_css_files = [expand('~/path/to/your/css_file.css')]
 
 endif
+"=== GitGutter
+let g:gitgutter_highlight_lines = 0
+
 "=== syntastic
 "==============================================================================================
 let g:syntastic_javascript_checkers=['eslint']

@@ -53,6 +53,9 @@ call dein#add('miyakogi/livemark.vim')
 
 " slim syntax highlihging
 call dein#add('slim-template/vim-slim')
+
+" show modifications
+call dein#add('airblade/vim-gitgutter')
 "eslint
 call dein#add('scrooloose/syntastic')
 call dein#add('mtscout6/syntastic-local-eslint.vim')
