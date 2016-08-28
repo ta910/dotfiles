@@ -17,11 +17,12 @@ function create_symlink() {
     ln -sf ~/dotfiles/vim/docs/${doc}.md ~/.vim/docs/${doc}.md
   done
 
-  if [ ! -d ~/.vim/after/ ]; then
-    mkdir -p ~/.vim/after/plugin
-    ln -sf ~/dotfiles/vim/after/release-comment.vim ~/.vim/after/plugin/release-comment.vim
+  #=== after
+  if [ -d ~/.vim/after/ ]; then
+    ln -sf ~/dotfiles/vim/after/plugin/release-comment.vim ~/.vim/after/plugin/release-comment.vim
   else
-    ln -sf ~/dotfiles/vim/after/release-comment.vim ~/.vim/after/plugin/release-comment.vim
+    mkdir -p ~/.vim/after/plugin
+    ln -sf ~/dotfiles/vim/after/plugin/release-comment.vim ~/.vim/after/plugin/release-comment.vim
   fi
   if [ -d ~/.vim/colors/ ]; then
     ln -sf ~/dotfiles/vim/colors/solarized.vim ~/.vim/colors
