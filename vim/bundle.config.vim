@@ -181,6 +181,11 @@ if dein#tap('livemark.vim')
   " let g:livemark_css_files = [expand('~/path/to/your/css_file.css')]
 
 endif
+"=== indentline
+"==============================================================================================
+set list listchars=tab:\¦\
+let g:indentLine_color_term = 239
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
 "=== GitGutter
 let g:gitgutter_highlight_lines = 0
 

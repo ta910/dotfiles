@@ -54,6 +54,9 @@ call dein#add('miyakogi/livemark.vim')
 " slim syntax highlihging
 call dein#add('slim-template/vim-slim')
 
+" indent guids displaying indnet
+call dein#add('Yggdroot/indentLine')
+
 " show modifications
 call dein#add('airblade/vim-gitgutter')
 "eslint
