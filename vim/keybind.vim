@@ -39,9 +39,6 @@ noremap k gk
 noremap gj j
 noremap gk k
 
-noremap <Space>t :tabnew<CR> "新しいTabを開く "
-
-
 "====== INSERT
 inoremap <silent>jj <ESC>
 inoremap <C-j> <Down>
@@ -53,3 +50,7 @@ inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
 inoremap <C-s> <C-o>$
 
+"=== MacVim
+"==========================
+"Tab移動
+nnoremap <C-t> gt
