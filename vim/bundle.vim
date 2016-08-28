@@ -59,6 +59,10 @@ call dein#add('airblade/vim-gitgutter')
 "eslint
 call dein#add('scrooloose/syntastic')
 call dein#add('mtscout6/syntastic-local-eslint.vim')
+
+"=== colorscheme
+call dein#add('tomasr/molokai')
+
 " Required:
 call dein#end()
 
