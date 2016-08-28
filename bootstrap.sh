@@ -49,8 +49,9 @@ function create_symlink() {
   done
 }
 
-[ -e ~/.vimrc ] || ln -s ~/dotfiles/vimrc ~/.vimrc
-
+[ -e ~/.vimrc ]  || ln -s ~/dotfiles/vimrc ~/.vimrc
+[ -e ~/.gvimrc ] || ln -s ~/dotfiles/gvimrc ~/.gvimrc
+#=== Execute
 if [ -d ~/.vim/ ]; then
   echo "True"
   create_symlink
