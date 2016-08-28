@@ -11,6 +11,9 @@
 
 "=== KEYBIND VIM-EDITOR (NOT PLUGIN KEYBIND)
 
+" PrefixKey
+nnoremap <Space>r :source ~/.vimrc<Enter>
+
 "====== NORMAL
 " 同じワードを検索
 nnoremap <Space> / *
