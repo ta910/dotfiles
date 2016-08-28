@@ -53,6 +53,8 @@ call dein#add('miyakogi/livemark.vim')
 
 " slim syntax highlihging
 call dein#add('slim-template/vim-slim')
+"=== colorscheme
+call dein#add('tomasr/molokai')
 " Required:
 call dein#end()
 
