@@ -206,3 +206,9 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 " execute check when :wq
 let g:syntastic_check_on_wq = 0
+
+"=== syntastic
+"==============================================================================================
+" vim-jsx用の設定
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
