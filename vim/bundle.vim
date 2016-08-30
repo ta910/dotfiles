@@ -69,6 +69,11 @@ call dein#add('mtscout6/syntastic-local-eslint.vim')
 " autoclosetag
 call dein#add('alvan/vim-closetag')
 
+" es6 syntax
+call dein#add('jelera/vim-javascript-syntax')
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+
 "=== colorscheme
 call dein#add('tomasr/molokai')
 
