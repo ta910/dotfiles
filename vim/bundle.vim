@@ -51,6 +51,9 @@ call dein#add('itchyny/lightline.vim')
 " real time markdown preview plugin for vim
 call dein#add('miyakogi/livemark.vim')
 
+
+" navigate seamlessly between vim and tmux
+call dein#add('christoomey/vim-tmux-navigator')
 " slim syntax highlihging
 call dein#add('slim-template/vim-slim')
 
