@@ -186,6 +186,10 @@ endif
 set list listchars=tab:\¦\
 let g:indentLine_color_term = 239
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
+
+"=== autoclosetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
+
 "=== GitGutter
 let g:gitgutter_highlight_lines = 0
 

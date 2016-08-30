@@ -66,6 +66,9 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('scrooloose/syntastic')
 call dein#add('mtscout6/syntastic-local-eslint.vim')
 
+" autoclosetag
+call dein#add('alvan/vim-closetag')
+
 "=== colorscheme
 call dein#add('tomasr/molokai')
 
