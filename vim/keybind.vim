@@ -38,6 +38,13 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+"---------------change insert by ja----------------------
+noremap あ a
+noremap い i
+noremap う u
+noremap お o
+noremap っd dd
+noremap っy yy
 
 "====== INSERT
 inoremap <silent>jj <ESC>
@@ -60,9 +67,12 @@ inoremap (<Enter> {}<Left><CR><ESC><S-o>
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
+"---------------change normal by ja----------------------
+" 日本語入力で っj と入力しても Enterを確定させれば insertモードを抜ける
+inoremap <silent>っj <ESC>
 
 
 "=== MacVim
 "==========================
 "Tab移動
-nnoremap <C-t> gt
+nnoremap <C-t> gt<Enter>
