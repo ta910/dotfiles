@@ -20,10 +20,10 @@ function create_symlink() {
 
   #=== after
   if [ -d ~/.vim/after/ ]; then
-    ln -sf ~/dotfiles/vim/after/plugin/release-comment.vim ~/.vim/after/plugin/release-comment.vim
+    ln -sf /Users/locona/dotfiles/vim/after/plugin/release-comment.vim /Users/locona/.vim/after/plugin/release-comment.vim
   else
     mkdir -p ~/.vim/after/plugin
-    ln -sf ~/dotfiles/vim/after/plugin/release-comment.vim ~/.vim/after/plugin/release-comment.vim
+    ln -sf /Users/locona/dotfiles/vim/after/plugin/release-comment.vim /Users/locona/.vim/after/plugin/release-comment.vim
   fi
 
   #=== colors
