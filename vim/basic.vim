@@ -4,6 +4,7 @@
 set encoding=utf-8
 scriptencoding utf-8
 
+let mapleader = ","     " キーマップリーダー
 set number              " 行番号を表示
 set title               " 編集中のファイル名を表示
 set mouse=a             " 全てのモードで有効
