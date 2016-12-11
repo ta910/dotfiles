@@ -9,7 +9,6 @@ set number              " 行番号を表示
 set title               " 編集中のファイル名を表示
 set mouse=a             " 全てのモードで有効
 set ttymouse=xterm2     " ターミナルエミュレータ
-set nocompatible        " vi互換をオフにする
 set ambiwidth=double
 set showmatch           " 括弧入力時の対応する括弧を表示
 set matchtime=1         " カーソルが飛ぶ時間 0.1秒
@@ -35,8 +34,9 @@ set pumheight=10        "補完ポップアップの高さ
 set vb t_vb=            "ビープ音消す
 set re=0                "軽くなるらしい
 set statusline=2        "ステータルラインの表示
-set synmaxcol=150       "一行でハイライトする文字数
-
+set synmaxcol=300       "一行でハイライトする文字数
+" yank use system clipboard
+set clipboard=unnamed
 
 set imdisable
 " スワップファイルファイルの設定(Readonly)
@@ -46,3 +46,9 @@ augroup swapchoice-readonly
 augroup END
 " 行末の余分なスペース削除
 autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+
+"カレンドディレクトリ設定(自動的に開いたファイルのディレクトリに移動)
+if exists('+autochdir')
+  set autochdir
+endif
