@@ -42,5 +42,5 @@
 |sm|CtrlPMRUFiles|これまで開いたファイル履歴から絞り込みます。|
 |ss|CtrlPMixed|バッファセレクタとして使える|
 |st|CtrlPTag|タグ一覧を表示|
-|sq|CtrlPQuickfix|タvimのquickfixと連携|
+|sq|CtrlPQuickfix|vimのquickfixと連携|
 
