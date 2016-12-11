@@ -1,15 +1,4 @@
-"----------------------------------------------------------------------------------------------
-"                                        _
-"                                 _   __(_)___ ___  __________
-"                                | | / / / __ `__ \/ ___/ ___/
-"                                | |/ / / / / / / / /  / /__
-"                                |___/_/_/ /_/ /_/_/   \___/
-"
-"                                 thub.com/locona/dotfiles
-"
-"----------------------------------------------------------------------------------------------
-
-"=== Indent 
+"=== Indent
 
 set autoindent          "改行時に前の行のインデントを計測
 set smartindent         "改行時に入力された行の末尾に合わせて次の行のインデントを増減する 
@@ -30,14 +19,17 @@ if has("autocmd")
   autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
   autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType php         setlocal sw=2 sts=2 ts=2 et
   autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
   autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType java        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType coffee      setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType javascript.jsx  setlocal sw=4 sts=4 ts=4 et
 endif

@@ -1,16 +1,4 @@
-"----------------------------------------------------------------------------------------------
-"                                        _
-"                                 _   __(_)___ ___  __________
-"                                | | / / / __ `__ \/ ___/ ___/
-"                                | |/ / / / / / / / /  / /__
-"                                |___/_/_/ /_/ /_/_/   \___/
-"
-"                                 thub.com/locona/dotfiles
-"
-"----------------------------------------------------------------------------------------------
-
-"=== Bundle only call 
-
+"=== Bundle only call
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -51,10 +39,32 @@ call dein#add('itchyny/lightline.vim')
 " real time markdown preview plugin for vim
 call dein#add('miyakogi/livemark.vim')
 
+
+" navigate seamlessly between vim and tmux
+call dein#add('christoomey/vim-tmux-navigator')
 " slim syntax highlihging
 call dein#add('slim-template/vim-slim')
+
+" indent guids displaying indnet
+call dein#add('Yggdroot/indentLine')
+
+" show modifications
+call dein#add('airblade/vim-gitgutter')
+"eslint
+call dein#add('scrooloose/syntastic')
+call dein#add('mtscout6/syntastic-local-eslint.vim')
+
+" autoclosetag
+call dein#add('alvan/vim-closetag')
+
+" es6 syntax
+call dein#add('jelera/vim-javascript-syntax')
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+
 "=== colorscheme
 call dein#add('tomasr/molokai')
+
 " Required:
 call dein#end()
 

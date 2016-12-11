@@ -1,15 +1,4 @@
-"----------------------------------------------------------------------------------------------
-"                                        _
-"                                 _   __(_)___ ___  __________
-"                                | | / / / __ `__ \/ ___/ ___/
-"                                | |/ / / / / / / / /  / /__
-"                                |___/_/_/ /_/ /_/_/   \___/
-"
-"                                 thub.com/locona/dotfiles
-"
-"----------------------------------------------------------------------------------------------
-
-"=== Bundle Extension 
+"=== Bundle Extension
 "=== :NERDTree
 "==========================================
 if dein#tap('nerdtree')
@@ -26,7 +15,6 @@ if dein#tap('nerdtree')
 
   " Keybind
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
 endif
 
 "=== :vim-submode
@@ -44,21 +32,16 @@ if dein#tap('vim-submode')
   call submode#map(       'winsize', 'n', '', '-',      '<C-w>+')
   call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>+')
   call submode#map(       'winsize', 'n', '', '+',      '<C-w>-')
-
-
   "  Tabpage navigation
   "-----------------------------------------------
   call submode#enter_with('changetab', 'n', '', 'gt', 'gt')
   call submode#map(       'changetab', 'n', '', 't',  'gt')
   call submode#enter_with('changetab', 'n', '', 'gT', 'gT')
   call submode#map(       'changetab', 'n', '', 'T',  'gT')
-
   "  Macro
   "-----------------------------------------------
   call submode#enter_with('macro', 'n', '', '@@', '@@')
   call submode#map(       'macro', 'n', '', '@',  '@@')
-
-
   "  Fold navigation
   "-----------------------------------------------
   call submode#enter_with('move-to-fold', 'n', '', 'zj', 'zj')
@@ -79,7 +62,6 @@ if dein#tap('ctrlp.vim')
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
   let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
   let g:ctrlp_user_command='ag %s -l'
-
   " Keybind
   "-----------------------------------------------
   nnoremap s <Nop>
@@ -181,3 +163,38 @@ if dein#tap('livemark.vim')
   " let g:livemark_css_files = [expand('~/path/to/your/css_file.css')]
 
 endif
+"=== indentline
+"==============================================================================================
+set list listchars=tab:\¦\
+let g:indentLine_color_term = 239
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
+
+"=== autoclosetag
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml"
+
+"=== GitGutter
+" Config
+let g:gitgutter_highlight_lines = 0
+" Keybind
+nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+
+"=== syntastic
+"==============================================================================================
+let g:syntastic_javascript_checkers=['eslint']
+"show error line
+let g:syntastic_enable_signs = 1
+" automatically update loaction list
+let g:syntastic_always_populate_loc_list = 0
+" automatically show location list
+let g:syntastic_auto_loc_list = 0
+" execute check when open file
+let g:syntastic_check_on_open = 1
+" execute check when :wq
+let g:syntastic_check_on_wq = 0
+
+"=== syntastic
+"==============================================================================================
+" vim-jsx用の設定
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
