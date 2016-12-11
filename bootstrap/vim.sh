@@ -44,7 +44,7 @@ function create_symlink() {
     ln -sf ~/dotfiles/vim/colors/vividchalk.vim ~/.vim/colors
   fi
 
-  files=(basic bundle bundle.config color indent keybind)
+  files=(basic bundle bundle.config color indent keybind syntax)
 
   for file in ${files[@]}; do
     echo "${file}.vim"
