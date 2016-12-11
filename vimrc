@@ -1,17 +1,6 @@
-""----------------------------------------------------------------------------------------------
-"                                        _
-"                                 _   __(_)___ ___  __________
-"                                | | / / / __ `__ \/ ___/ ___/
-"                                | |/ / / / / / / / /  / /__
-"                                |___/_/_/ /_/ /_/_/   \___/
-"
-"                                 thub.com/locona/dotfiles
-"
-"----------------------------------------------------------------------------------------------
-
-"=== Loading
 source ~/.vim/.vimrc.basic
 source ~/.vim/.vimrc.bundle
 source ~/.vim/.vimrc.color
 source ~/.vim/.vimrc.bundle.config
 source ~/.vim/.vimrc.keybind
+source ~/.vim/.vimrc.syntax
