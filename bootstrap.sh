@@ -5,4 +5,4 @@
 # 第１引数: PCのMACアドレス
 #==================================
 sh ./bootstrap/vim.sh
-sh ./bootstrap/squid.sh $1
+# sh ./bootstrap/squid.sh $1
