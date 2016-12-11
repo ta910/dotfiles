@@ -38,6 +38,7 @@ set statusline=2        "ステータルラインの表示
 set synmaxcol=150       "一行でハイライトする文字数
 
 
+set imdisable
 " スワップファイルファイルの設定(Readonly)
 augroup swapchoice-readonly
   autocmd!
