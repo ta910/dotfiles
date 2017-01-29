@@ -31,10 +31,9 @@ set smartindent         "改行時に入力された行の末尾に合わせて�
 set hlsearch            "検索結果ハイライト
 set pumheight=10        "補完ポップアップの高さ
 
-set vb t_vb=            "ビープ音消す
 set re=0                "軽くなるらしい
 set statusline=2        "ステータルラインの表示
-set synmaxcol=300       "一行でハイライトする文字数
+set synmaxcol=1200       "一行でハイライトする文字数
 " yank use system clipboard
 set clipboard=unnamed
 
@@ -46,9 +45,12 @@ augroup swapchoice-readonly
 augroup END
 " 行末の余分なスペース削除
 autocmd BufWritePre * :%s/\s\+$//ge
-autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! cd %:p:h | endif
 
 "カレンドディレクトリ設定(自動的に開いたファイルのディレクトリに移動)
 if exists('+autochdir')
   set autochdir
 endif
+set visualbell
+set visualbell t_vb=
+set noerrorbells
