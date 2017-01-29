@@ -42,7 +42,7 @@ inoremap <C-f> <Right>
 inoremap <C-u> <BackSpace>
 inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
-inoremap <C-v> <C-o>$
+inoremap <C-e> <C-o>$
 "----------- auto brackets ----------
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
