@@ -19,6 +19,7 @@ if has("autocmd")
   autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
   autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType zsh         setlocal sw=2 sts=2 ts=2 et
   autocmd FileType php         setlocal sw=2 sts=2 ts=2 et
   autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
   autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
@@ -32,4 +33,5 @@ if has("autocmd")
   autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
   autocmd FileType coffee      setlocal sw=2 sts=2 ts=2 et
   autocmd FileType javascript.jsx  setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType vim setlocal sw=2 sts=2 ts=2 et
 endif
