@@ -20,9 +20,6 @@ set virtualedit=block
 set noswapfile          "スワップファイル作らない
 
 set expandtab           "タブ入力を複数の空hバク入力に置き換える
-set tabstop=2           "tabでの半角スペース
-set shiftwidth=2        "自動インデントでずれる幅
-set softtabstop=2
 set smarttab            "新しい行を作った時に高度な自動インデントを行う
 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent          "改行時に前の行のインデントを計測

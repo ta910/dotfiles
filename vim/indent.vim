@@ -3,8 +3,8 @@
 set autoindent          "改行時に前の行のインデントを計測
 set smartindent         "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set cindent             "Cプログラムファイルの自動インデントを始める
-set smarttab            "新しい行を作った時に高度な自動インデントを行う
-set expandtab           "タブ入力を複数の空白に置き換える
+" set smarttab            "新しい行を作った時に高度な自動インデントを行う
+" set expandtab           "タブ入力を複数の空白に置き換える
 
 set tabstop=2           "タブを含むファイルを開いた際, タブを何文字の空白に変換するか
 set shiftwidth=2        "自動インデントで入る空白数
