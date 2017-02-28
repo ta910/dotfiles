@@ -55,7 +55,7 @@ call dein#add('scrooloose/nerdcommenter')
 call dein#add('itchyny/lightline.vim')
 
 " working with Ruby on Rails applicaiton
-call dein#add('tpope/vim-rails')
+" call dein#add('tpope/vim-rails')
 
 " vim motion on speed
 " call dein#add('easymotion/vim-easymotion')
@@ -90,7 +90,6 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add ('kana/vim-altr')
 
 "eslint
-call dein#add('scrooloose/syntastic')
 call dein#add('mtscout6/syntastic-local-eslint.vim')
 
 " autoclosetag
@@ -121,10 +120,11 @@ call dein#add('Shougo/neoinclude.vim')
 call dein#add('vim-jp/vim-cpp')
 
 "=== java"
-" call dein#add('vim-scripts/java.vim')
-" call dein#add('vim-scripts/javacomplete')
+call dein#add('vim-scripts/java.vim')
+call dein#add('vim-scripts/javacomplete')
+call dein#add('artur-shaik/vim-javacomplete2')
 "===
-call dein#add('mattn/benchvimrc-vim')
+" call dein#add('mattn/benchvimrc-vim')
 
 "=== python
 call dein#add('davidhalter/jedi-vim')
@@ -146,7 +146,7 @@ call dein#add('scrooloose/syntastic')
 " emmet html
 call dein#add('mattn/emmet-vim')
 " reflesh browser
-call dein#add('tell-k/vim-browsereload-mac')
+" call dein#add('tell-k/vim-browsereload-mac')
 " css3 syntax
 call dein#add('hail2u/vim-css3-syntax')
 
@@ -161,18 +161,17 @@ call dein#add('cohama/lexima.vim')
 call dein#add('tpope/vim-fugitive')
 
 "=== Mono"
-call dein#add('OmniSharp/omnisharp-vim', {
-\   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
-\   'build': {
-\     'windows' : 'msbuild server/OmniSharp.sln',
-\     'mac': 'xbuild server/OmniSharp.sln',
-\     'unix': 'xbuild server/OmniSharp.sln',
-\   },
-\ })
-
-call dein#add('OrangeT/vim-csharp', {'autoload': {'filetypes': ['cs', 'csi', 'csx']}})
-call dein#add('scrooloose/syntastic')
-call dein#add('tpope/vim-dispatch')
+" call dein#add('OmniSharp/omnisharp-vim', {
+" \   'autoload': { 'filetypes': [ 'cs', 'csi', 'csx' ] },
+" \   'build': {
+" \     'windows' : 'msbuild server/OmniSharp.sln',
+" \     'mac': 'xbuild server/OmniSharp.sln',
+" \     'unix': 'xbuild server/OmniSharp.sln',
+" \   },
+" \ })
+"
+" call dein#add('OrangeT/vim-csharp', {'autoload': {'filetypes': ['cs', 'csi', 'csx']}})
+" call dein#add('tpope/vim-dispatch')
 
 " Required:
 call dein#end()
