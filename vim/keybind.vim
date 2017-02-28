@@ -5,8 +5,7 @@ nnoremap <Space>r :source ~/.vimrc<Enter>
 
 "====== NORMAL
 nnoremap q: :q
-nnoremap <Space>: :q<Enter>
-"====== NORMAL + VISUAL
+nnoremap <Space>: :q<Enter> "====== NORMAL + VISUAL
 map <C-c> <ESC>
 noremap <Space>h ^
 noremap <Space>l $
@@ -43,6 +42,7 @@ inoremap <C-u> <BackSpace>
 inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+inoremap <C-y> <nop>
 "----------- auto brackets ----------
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
