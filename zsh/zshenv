@@ -1,0 +1,6 @@
+if [ -x /usr/libexec/path_helper ]; then
+  eval `/usr/libexec/path_helper -s`
+fi
+
+export PATH=$PATH:/usr/local/sbin
+export PATH="$HOME/.anyenv/bin:$PATH"

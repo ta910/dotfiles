@@ -1,0 +1,173 @@
+# Path to your oh-my-zsh installation.
+## CREGIT ENGINE
+export ZSH=/Users/locona/.oh-my-zsh
+export TWILIO_ACCOUNT_SID="dummy"
+export TWILIO_AUTH_TOKEN="dummy"
+export FREEE_CLIENT_ID='3eea014d54e19d9e22091d4a2e84271349ace9e98cc98dcb64a29b11e91defc7'
+export FREEE_CLIENT_SECRET='c294f5d0d7bae68086289959a3100193b7bea56f70c8e7a938953be7220beed7'
+export PAYPAL_CLIENT_ID='AclVlZbpNjAQgoS792ALRe-CWeN_5Gid1X5y2UOx7K6LMYgJbHtH66TcOGwgLgE2l59nQn0Tc148ElPV'
+export PAYPAL_CLIENT_SECRET='EMrZMoOe-_vSUq2d7eeSc6rb00TXFhR-8Cj1jhk-JtcvgZb7XuDS8Y9QgBoZgGRwuR4jtmbQsnPHGVSv'
+export UBIREGI_APP_PRODUCTION_CLIENT_ID='lendy-app-production'
+export UBIREGI_APP_PRODUCTION_CLIENT_SECRET='9a361cb30782cf81cdc261f09e1fc33ed34be3febdd80d4a25699c05177e7ec82d8a7206e3f49a61210c377b90948a16a132fe017a84b694501fd25772e82a8c'
+export UBIREGI_APP_STAGING_CLIENT_ID='lendy-app-staging'
+export UBIREGI_APP_STAGING_CLIENT_SECRET='c3434dcf0b9a06ef987237138be3d457bf84544e30e738e3daac09b48f5aeba3cd40371c867d07cf3db9e9f92f347609c7f3f50178543013ab1301658e20da9b'
+export UBIREGI_APP_DEVELOPMENT_CLIENT_ID='lendy-app-development'
+export UBIREGI_APP_DEVELOPMENT_CLIENT_SECRET='6a22fc81a541d4e71ab90c322986c195a7e697a08f2f9596f8bcd27d2c8cf8fa5bdc84a4f9604d4c3182e1210335c17005a6cf83f2533bdf0c51c89af5b9b55b'
+export UBIREGI_APP_TEST_CLIENT_ID='lendy-app-test'
+export UBIREGI_APP_TEST_CLIENT_SECRET='a09eb4f248acb49cbfdcf8ef36c5e39e6bb4591127c17d033070b19c113da67f1e75158d5e523949b6d811ab6c1f9bdee6ab03ec491ca631c39a18558824274a'
+export UBIREGI_REFRESH_TOKEN_CLIENT_ID='lendy-refresh-token'
+
+export UBIREGI_CLIENT_ID='com.ce-example.app'
+export UBIREGI_CLIENT_SECRET='082b5e7e2d27c7278ee03037bdfb24d8d4bc64fb7d2ff8d61b655c7c80ef3e7785540f4c64ffc66d3d8785e269935ebf98e93f0de119f4314c45bd702037904a'
+export CRYPT_PATH='d20622c2b458ba1dcfeb1560ce1f37fa'
+
+export SNOOPY_CRYPTO_KEY='L3Rtlet_rabFiBcKIomcUbTw8c2LX8hAjdi_Zu-H2dU='
+# export LENDY_ENV='test'
+
+
+## PRIVATE
+export WASEDA_USERID='1F1405085'
+export WASEDA_PASSWORD='syuchan-0405'
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+stty -ixon -ixoff
+
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git ruby gem osx bundler brew rails emoji-clock)
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# History共有
+setopt share_history
+
+# 直前と同じコマンドの場合は履歴に追加しない
+setopt hist_ignore_dups
+
+# 重複するコマンドは古い法を削除する
+setopt hist_ignore_all_dups
+
+# Peco 設定
+function peco-select-history(){
+  local tac
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+  BUFFER=$(\history -n 1 | \
+    eval $tac | \
+    peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+# autojump
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
+# iTerm tab名設定
+function tt {
+  echo -ne "\033]0;"$*"\007"
+}
+
+
+# 補完
+autoload -Uz compinit
+compinit
+
+export TERM=xterm-256color
+
+setopt no_beep # beepを無効にする
+setopt auto_cd # ディレクトリ名だけでcdする
+setopt auto_pushd # cdしたら自動的にpushdする
+
+alias vi="/Applications/MacVim.app/Contents/MacOS/Vim -g"
+alias j="autojump"
+alias g='git'
+
+# Direnv
+#-----------------------------------------------
+eval "$(direnv hook zsh)"
+
+# Anyenv
+#-----------------------------------------------
+if [ -d $HOME/.anyenv ]; then
+  eval "$(anyenv init -)"
+fi
