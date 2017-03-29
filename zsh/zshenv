@@ -1,6 +1,13 @@
-if [ -x /usr/libexec/path_helper ]; then
-  eval `/usr/libexec/path_helper -s`
-fi
+# Load
+#-----------------------------------------------
+for file in ~/.zsh/src/{exports,aliases}.zsh; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
 
-export PATH=$PATH:/usr/local/sbin
-export PATH="$HOME/.anyenv/bin:$PATH"
+
+#  Anyenv
+#-----------------------------------------------
+if [ -d $HOME/.anyenv ]; then
+  eval "$(anyenv init -)"
+fi

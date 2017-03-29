@@ -15,8 +15,8 @@ call dein#begin(expand('/Users/locona/.vim/bundle'))
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-" call dein#add('Shougo/neosnippet.vim')
-" call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
 " call dein#add('violetyk/neocomplete-php.vim')
 
 " You can specify revision/branch/tag.
@@ -133,11 +133,6 @@ call dein#add('lambdalisue/vim-django-support', {
     \   "filetypes": ["python", "python3", "djangohtml"]
     \}
     \})
-call dein#add('jmcantrell/vim-virtualenv', {
-      \"autoload": {
-      \ "filetypes": ["python", "python3", "djangohtml"]
-      \}
-      \})
 call dein#add('hynek/vim-python-pep8-indent')
 call dein#add('scrooloose/syntastic')
 
