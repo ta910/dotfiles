@@ -28,6 +28,14 @@ if [ ! `which anyenv` ]; then
   # export is in zsh/src/exports.zsh
   git clone https://github.com/riywo/anyenv $HOME/.anyenv
   exec $SHELL -l
+
+  anyenv install pyenv
+  pyenv install 3.5.2
+  pyenv global 3.5.2
+
+  anyenv install goenv
+  goenv install 1.8
+  goenv global 1.8
 fi
 
 
