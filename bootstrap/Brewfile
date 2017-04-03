@@ -1,0 +1,42 @@
+tap 'caskroom/cask'
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+brew 'cscope'
+brew 'direnv'
+brew 'openssl'
+brew 'jpeg'
+brew 'libpng'
+brew 'libtiff'
+brew 'wxmac'
+brew 'erlang'
+brew 'gdbm'
+brew 'go'
+brew 'glide'
+brew 'gnu-sed'
+brew 'libyaml'
+brew 'lua'
+brew 'mas'
+brew 'readline'
+brew 'sqlite'
+brew 'python'
+brew 'mercurial'
+brew 'pcre'
+brew 'perl'
+brew 'rabbitmq'
+brew 'ruby'
+brew 'xz'
+brew 'the_silver_searcher'
+brew 'vim', args: ['with-lua']
+brew 'zsh'
+cask 'shiftit'
+mas 'Display Menu', id: 549083868
+mas 'Keynote', id: 409183694
+mas 'LINE', id: 539883307
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
+mas 'Paste', id: 967805235
+mas 'PG Commander', id: 669475285
+mas 'PopHub', id: 928494006
+mas 'Skitch', id: 425955336
+mas 'Slack', id: 803453959
+mas 'Xcode', id: 497799835
