@@ -96,7 +96,7 @@ call dein#add('mtscout6/syntastic-local-eslint.vim')
 call dein#add('alvan/vim-closetag')
 "
 " f/t motions to highlight all possible choices
-call dein#add('Lokaltog/vim-easymotion')
+" call dein#add('Lokaltog/vim-easymotion')
 
 " auto close parenthess and repeat by bot
 "call dein#add('')
@@ -113,7 +113,7 @@ call dein#add('kana/vim-textobj-indent', { 'depend': ['kana/vim-textobj-user']})
 call dein#add('tomasr/molokai')
 
 "=== coffeescript syntax
-call dein#add('kchmck/vim-coffee-script')
+" call dein#add('kchmck/vim-coffee-script')
 "=== c++
 call dein#add('justmao945/vim-clang')
 call dein#add('Shougo/neoinclude.vim')
