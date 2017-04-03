@@ -24,4 +24,5 @@ augroup fileTypeIndent
   autocmd BufRead,BufNewFile *.py setf python
   autocmd BufRead,BufNewFile *.rb setf ruby
   autocmd BufRead,BufNewFile *.c setf c
+  autocmd BufRead,BufNewFile *.sh setf sh
 augroup END
