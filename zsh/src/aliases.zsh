@@ -1,6 +1,8 @@
 # override default command
 #---------------------------------------------------------------------
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias ali='vim $HOME/.zsh/src/aliases.zsh'
+alias exp='vim $HOME/.zsh/src/exports.zsh'
 alias vi="mvim -g"
 alias mv="mv -i"
 alias rm="rm -i"
@@ -47,7 +49,7 @@ alias -g cw="/Users/locona/w/github.com/locona/crawler"
 alias -g ra="$HOME/w/github.com/locona/raaiki"
 alias -g waseda="$HOME/w/github.com/locona/waseda"
 alias -g sn="$HOME/w/github.com/creditengine/snoopy"
-alias -g pylib="$HOME/.anyenv/envs/pyenv/versions/ce_app/lib/python3.5/site-packages"
+alias -g pylib="$HOME/.anyenv/envs/pyenv/versions/3.5.2/lib/python3.5/site-packages"
 alias -g crea="$HOME/w/github.com/creasty/"
 alias -g hub="$HOME/w/github.com/locona/go-hub"
 alias -g slack="$HOME/w/github.com/locona/go-slack"
@@ -73,11 +75,16 @@ alias pf='pip freeze'
 
 # Django
 #---------------------------------------------------------------------
-alias dm='python manage.py migrate'
+alias dsu='python manage.py show_urls'
+alias dsm='python manage.py showmigrations'
 alias dmm='python manage.py makemigrations'
+alias dm='python manage.py migrate'
 alias dsa='python manage.py startapp'
-alias dt='python manage.py test --settings=snoopy.config.settings.test'
-alias cdt='python manage.py test'
+alias dt='python manage.py test'
+#### settings
+alias -g sce='--settings=CE_app.settings'
+alias -g sadmin='--settings=settings.admin'
+alias -g ssn='--settings=snoopy.config.settings.test'
 
 # Go
 #-----------------------------------------------------
