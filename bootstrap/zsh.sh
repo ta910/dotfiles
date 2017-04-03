@@ -36,6 +36,10 @@ if [ ! `which anyenv` ]; then
   anyenv install goenv
   goenv install 1.8
   goenv global 1.8
+
+  anyenv install rbenv
+  rbenv install 2.4.1
+  rbenv global 2.4.1
 fi
 
 
