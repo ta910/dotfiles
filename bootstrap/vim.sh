@@ -26,6 +26,13 @@ function create_symlink() {
     ln -sf ~/w/github.com/locona/dotfiles/vim/after/plugin/release-comment.vim /Users/locona/.vim/after/plugin/release-comment.vim
   fi
 
+  if [ -d ~/.vim/ftplugin ]; then
+    ln -sf $HOME/w/github.com/locona/dotfiles/vim/ftplugin/*.vim $HOME/.vim/ftplugin/
+  else
+    mkdir -p ~/.vim/ftplugin
+    ln -sf $HOME/w/github.com/locona/dotfiles/vim/ftplugin/*.vim $HOME/.vim/ftplugin/
+  fi
+
   #=== colors
   if [ -d ~/.vim/colors/ ]; then
     ln -sf ~/w/github.com/locona/dotfiles/vim/colors/solarized.vim ~/.vim/colors
