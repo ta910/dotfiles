@@ -168,6 +168,8 @@ call dein#add('tpope/vim-fugitive')
 " call dein#add('OrangeT/vim-csharp', {'autoload': {'filetypes': ['cs', 'csi', 'csx']}})
 " call dein#add('tpope/vim-dispatch')
 
+call dein#add('fatih/vim-go')
+
 " Required:
 call dein#end()
 
