@@ -398,8 +398,10 @@ command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobi
 
 
 "=== scrooloose/syntastic
-let g:syntastic_python_checkers = ['pyflakes', 'pep8']
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_checkers = ['flake8', 'pep8']
+let g:syntastic_python_checker_args='--ignore=E501'
+let g:syntastic_python_pep8_args='--ignore=E501'
+let g:syntastic_python_flake8_args = '--ignore="E501"'
 
 
 function! Preserve(command)
