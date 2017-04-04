@@ -101,3 +101,8 @@ alias dira='direnv allow'
 # gsed
 #-----------------------------------------------------
 alias gs='gsed --in-place' # 's/target/converted/g' filepath
+
+
+# elasticsearch
+#-----------------------------------------------------
+alias elpl='elasticsearch-plugin'
