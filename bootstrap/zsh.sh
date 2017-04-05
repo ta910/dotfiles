@@ -1,4 +1,5 @@
 #!/bin/sh
+sed -e
 
 function create_symlink() {
   if [ -d $HOME/.zsh/src ]; then
@@ -28,21 +29,10 @@ if [ ! `which anyenv` ]; then
   # export is in zsh/src/exports.zsh
   git clone https://github.com/riywo/anyenv $HOME/.anyenv
   exec $SHELL -l
-
-  anyenv install pyenv
-  pyenv install 3.5.2
-  pyenv global 3.5.2
-
-  anyenv install goenv
-  goenv install 1.8
-  goenv global 1.8
-
-  anyenv install rbenv
-  rbenv install 2.4.1
-  rbenv global 2.4.1
 fi
 
 
 if [ ! `which direnv` ]; then
   brew install direnv
+  exec $SHELL -l
 fi
