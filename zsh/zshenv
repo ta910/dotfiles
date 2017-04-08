@@ -9,5 +9,5 @@ unset file
 #  Anyenv
 #-----------------------------------------------
 if [ -d $HOME/.anyenv ]; then
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - zsh)"
 fi
