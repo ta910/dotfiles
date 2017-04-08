@@ -9,8 +9,8 @@ function create_symlink() {
     ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/*.zsh $HOME/.zsh/src/
   fi
 
-  [ -e $HOME/.zshrc ] || ln -s $HOME/w/github.com/locona/dotfiles/zsh/zshrc
-  [ -e $HOME/.zshenv ] || ln -s $HOME/w/github.com/locona/dotfiles/zsh/zshenv
+  [ -e $HOME/.zshrc ] || ln -s $HOME/w/github.com/locona/dotfiles/zsh/zshrc $HOME/.zshrc
+  [ -e $HOME/.zshenv ] || ln -s $HOME/w/github.com/locona/dotfiles/zsh/zshenv $HOME/.zshenv
 }
 
 if [ -d $HOME/.zsh ]; then
@@ -25,14 +25,15 @@ if [ ! -d $HOME/.zplug ]; then
 fi
 
 
-if [ ! `which anyenv` ]; then
-  # export is in zsh/src/exports.zsh
-  git clone https://github.com/riywo/anyenv $HOME/.anyenv
-  exec $SHELL -l
-fi
+# if [ ! `which anyenv` ]; then
+echo "hello"
+# export is in zsh/src/exports.zsh
+git clone https://github.com/riywo/anyenv $HOME/.anyenv
+exec $SHELL -l
+# fi
 
 
-if [ ! `which direnv` ]; then
-  brew install direnv
-  exec $SHELL -l
-fi
+#if [ ! `which direnv` ]; then
+#  brew install direnv
+#  exec $SHELL -l
+#fi

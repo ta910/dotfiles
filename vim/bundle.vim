@@ -5,10 +5,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/locona/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/locona/.vim/bundle'))
+call dein#begin(expand('$HOME/.vim/bundle'))
 
 " Let dein manage dein
 " Required:
