@@ -298,7 +298,9 @@ call dein#config({
   \ })
 
 " Rails
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
+if dein#tap('altr')
+  call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
+endif
 
 "=== vim-fugitive
 
@@ -343,7 +345,6 @@ if dein#tap('vim-clang')
   endif
 endif
 
-
 "=== java.vim
 if dein#tap('java.vim')
   let g:java_highlight_all=1
@@ -354,13 +355,9 @@ if dein#tap('java.vim')
 endif
 
 "=== cohama/lexima.vim
-if dein#tap('exima.vim')
+if dein#tap('lexima.vim')
   let g:lexima_enable_newline_rules = 0
 endif
-
-
-
-
 
 "emmet-vim
 if dein#tap('emmet-vim')
