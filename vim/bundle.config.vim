@@ -58,13 +58,13 @@ endif
 if dein#tap('ctrlp.vim')
   " Config
   "-----------------------------------------------
-  " let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
+  let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
   let g:ctrlp_mruf_max            = 20 " MRUの最大記録数
   let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
   let g:ctrlp_working_path_mode = 'ra'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
   let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
-  let g:ctrlp_user_command='ag %s -l'
   " Keybind
   "-----------------------------------------------
   nnoremap s <Nop>
@@ -76,10 +76,6 @@ if dein#tap('ctrlp.vim')
   nnoremap sm :<C-u>CtrlPMRUFiles<CR>
   nnoremap sq :<C-u>CtrlPQuickfix<CR>
   nnoremap ss :<C-u>CtrlPMixed<CR>
-  if executable('ag')
-    let g:ctrlp_use_caching=0
-    let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
-  endif
 endif
 
 "=== :lightline
