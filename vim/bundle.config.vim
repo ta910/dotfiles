@@ -58,8 +58,8 @@ endif
 if dein#tap('ctrlp.vim')
   " Config
   "-----------------------------------------------
-  let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
-  let g:ctrlp_mruf_max            = 1000 " MRUの最大記録数
+  " let g:ctrlp_clear_cache_on_exit = 0   " 終了時キャッシュをクリアしない
+  let g:ctrlp_mruf_max            = 20 " MRUの最大記録数
   let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで開く
   let g:ctrlp_working_path_mode = 'ra'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
@@ -146,153 +146,149 @@ if dein#tap('lightline.vim')
   endfunction
 endif
 
-"=== :livemark.vim
-"==============================================================================================
-call dein#config({
-  \ 'autoload': {
-    \ 'commands': 'LiveMark',
-  \ }
-\ })
-
-let g:livemark_browser = "open %s"
-let g:livemark_browser_port = 8089
-let g:livemark_vim_port = 8090
 "=== :Unite
 "==============================================================================================
-"大文字小文字を区別しない
-let g:unite_enable_ignore_case=1
-let g:unite_enable_smart_case=1
-" 入力モードで開始
-let g:unite_enable_start_insert=1
+if dein#tap('unite')
+  "大文字小文字を区別しない
+  let g:unite_enable_ignore_case=1
+  let g:unite_enable_smart_case=1
+  " 入力モードで開始
+  let g:unite_enable_start_insert=1
 
-" use ag
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_max_candidates = 200
-let g:unite_source_grep_recursive_opt = ''
-let g:unite_source_history_yank_enable=1
-let g:unite_source_file_mru_limit=200
-
-"====== Normal
-"--------------------------------------------------
-" The prefix key
-nnoremap [unite] <Nop>
-nmap <Space>u [unite]
-
-" unite.vim keymap
-"ヤンクの履歴
-nnoremap <silent> ,uy :<C-u>Unite history/yank<<CR>
-nnoremap <silent> ,ub:<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf:<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> <Leader>ur:<C-u>Unite -buffer-name=register register<CR>
-" 最近使ったファイルの一覧とバッファを表示
-nnoremap <silent> <Leader>ub:<C-u>Unite file_mru buffer<CR>
-nnoremap <silent> <Leader>ub:<C-u>Unite file_rec/async:!<CR>
-
-"=== grep.vim
-"==============================================================================================
-let Grep_Skip_Dirs = '.git nodemodules '
-let Grep_Default_Options = '-I'
-let Grep_Skip_Files = '*~ *.bak'
-
-"=== Unite.vim
-"==============================================================================================
-" 大文字小文字区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" grep検索
-nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-w><CR>
-"grep検索結果の際呼び出し
-nnoremap <silent> ,cr :<C-u>UniteResume search-buffer<CR>
-nnoremap <silent> ,cl :<C-u>UniteWithCursorWord lines<CR>
-
-"unite use ag(The Silver Search)
-if executable('ag')
+  " use ag
   let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+  let g:unite_source_grep_max_candidates = 200
   let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_history_yank_enable=1
+  let g:unite_source_file_mru_limit=200
+  "====== Normal
+  "--------------------------------------------------
+  " The prefix key
+  nnoremap [unite] <Nop>
+  nmap <Space>u [unite]
+
+  " unite.vim keymap
+  "ヤンクの履歴
+  nnoremap <silent> ,uy :<C-u>Unite history/yank<<CR>
+  nnoremap <silent> ,ub:<C-u>Unite buffer<CR>
+  nnoremap <silent> ,uf:<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+  nnoremap <silent> <Leader>ur:<C-u>Unite -buffer-name=register register<CR>
+  " 最近使ったファイルの一覧とバッファを表示
+  nnoremap <silent> <Leader>ub:<C-u>Unite file_mru buffer<CR>
+  nnoremap <silent> <Leader>ub:<C-u>Unite file_rec/async:!<CR>
+  " grep検索
+  nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+  " カーソル位置の単語をgrep検索
+  nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-w><CR>
+  "grep検索結果の際呼び出し
+  nnoremap <silent> ,cr :<C-u>UniteResume search-buffer<CR>
+  nnoremap <silent> ,cl :<C-u>UniteWithCursorWord lines<CR>
+  "=== grep.vim
+  "==============================================================================================
+  let Grep_Skip_Dirs = '.git nodemodules '
+  let Grep_Default_Options = '-I'
+  let Grep_Skip_Files = '*~ *.bak'
+
+
+  "unite use ag(The Silver Search)
+  if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+    let g:unite_source_grep_recursive_opt = ''
+  endif
 endif
+
+
 
 "=== vim-easy-align
 "==============================================================================================
-"Start interactive EasyAlign in visual mode
-xmap ga <Plug>(EasyAlign)
+if dein#tap('vim-easy-align')
+  "Start interactive EasyAlign in visual mode
+  xmap ga <Plug>(EasyAlign)
 
-"Start interactive EasyAlign for a motion/text object
-nmap ga <Plug>(EasyAlign)
-
-"=== Emmet
-"==============================================================================================
-
+  "Start interactive EasyAlign for a motion/text object
+  nmap ga <Plug>(EasyAlign)
+endif
 
 "=== indentline
 "==============================================================================================
-set list listchars=tab:\¦\
-let g:indentLine_color_term = 239
-let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
+if dein#tap('indentLine')
+  set list listchars=tab:\¦\
+  let g:indentLine_color_term = 239
+  let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
+endif
 
 "=== autoclosetag
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.erb,*.jsx"
+if dein#tap('vim-closetag')
+  let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.xml,*.erb,*.jsx"
+endif
 
 " === GitGutter
-" Config
-let g:gitgutter_highlight_lines = 0
-" Keybind
-nnoremap <silent> <Space>gg :<C-u>GitGutterToggle<CR>
-nnoremap <silent> <Space>gh :<C-u>GitGutterLineHighlightsToggle<CR>
-"=== Nerd_Commenter
-"==============================================================================================
-" Config
-" Add Spaces after comment delimiters by default
-let g:indentLine_color_term = 239
-" Use compact syntax for prettified multi-line comments
-let g:NERDCreateDefaultMappings = 0
-" Align line-wise comment delimiters flush let instead of following code indentation
-let NERDSpaceDelims = 1
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-" Add your own custom formats or overridxe the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**', 'right': '*/' }}
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
+if dein#tap('vim-gitgutter')
+  " Config
+  let g:gitgutter_highlight_lines = 0
+  " Keybind
+  nnoremap <silent> <Space>gg :<C-u>GitGutterToggle<CR>
+  nnoremap <silent> <Space>gh :<C-u>GitGutterLineHighlightsToggle<CR>
+endif
+if dein#tap('nerdcommenter')
+  "=== Nerd_Commenter
+  "==============================================================================================
+  " Config
+  " Add Spaces after comment delimiters by default
+  let g:indentLine_color_term = 239
+  " Use compact syntax for prettified multi-line comments
+  let g:NERDCreateDefaultMappings = 0
+  " Align line-wise comment delimiters flush let instead of following code indentation
+  let NERDSpaceDelims = 1
+  " Set a language to use its alternate delimiters by default
+  let g:NERDAltDelims_java = 1
+  " Add your own custom formats or overridxe the defaults
+  let g:NERDCustomDelimiters = { 'c': { 'left': '/**', 'right': '*/' }}
+  " Allow commenting and inverting empty lines (useful when commenting a region)
+  let g:NERDCommentEmptyLines = 1
 
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+  " Enable trimming of trailing whitespace when uncommenting
+  let g:NERDTrimTrailingWhitespace = 1
 
-" Keymap
-nmap <Space>/ <Plug>NERDCommenterToggle
-vmap <Space>/ <Plug>NERDCommenterToggle
-
-"=== syntastic
-"==============================================================================================
-let g:syntastic_javascript_checkers=['eslint']
-"show error line
-let g:syntastic_enable_signs = 1
-" automatically update loaction list
-let g:syntastic_always_populate_loc_list = 0
-" automatically show location list
-let g:syntastic_auto_loc_list = 0
-" execute check when open file
-let g:syntastic_check_on_open = 1
-" execute check when :wq
-let g:syntastic_check_on_wq = 0
+  " Keymap
+  nmap <Space>/ <Plug>NERDCommenterToggle
+  vmap <Space>/ <Plug>NERDCommenterToggle
+endif
 
 "=== syntastic
 "==============================================================================================
-" vim-jsx用の設定
-let g:jsx_ext_required = 0
-let g:jsx_pragma_required = 0
+"=== scrooloose/syntastic
+if dein#tap('syntastic')
+  let g:syntastic_javascript_checkers=['eslint']
+  "show error line
+  let g:syntastic_enable_signs = 1
+  " automatically update loaction list
+  let g:syntastic_always_populate_loc_list = 0
+  " automatically show location list
+  let g:syntastic_auto_loc_list = 0
+  " execute check when open file
+  let g:syntastic_check_on_open = 1
+  let g:jsx_ext_required = 0
+  let g:jsx_pragma_required = 0
+  " execute check when :wq
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_python_checkers = ['flake8', 'pep8']
+  let g:syntastic_python_checker_args='--ignore=E501'
+  let g:syntastic_python_pep8_args='--ignore=E501'
+  let g:syntastic_python_flake8_args = '--ignore="E501"'
+endif
 
 "=== surrond.vim
-" nmap ,( csw(
-" nmap ,) csw)
-" nmap ,{
-nmap ," ysiw"
-nmap ,( ysiw(
-nmap ,) ysiw)
+if dein#tap('vim-surround')
+  " nmap ,( csw(
+  " nmap ,) csw)
+  " nmap ,{
+  nmap ," ysiw"
+  nmap ,( ysiw(
+  nmap ,) ysiw)
+endif
 
 "=== vim-altr"
 call dein#config({
@@ -303,16 +299,10 @@ call dein#config({
 
 " Rails
 call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
-call altr#define('app/models/%.rb', 'spec/models/%_spec.rb', 'spec/factories/%srb')
 
 "=== vim-fugitive
 
 "=== Shougo/neocomplete.vim
-
 let g:neocomplete#enable_at_startup = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
@@ -322,87 +312,60 @@ let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 "=== vim-clang
-let g:clang_auto = 0
-let g:clang_complete_auto = 0
-let g:clang_auto_select = 0
-let g:clang_use_library = 1
-let g:clang_c_options = '-std=c11'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-let g:clang_c_completeopt   = 'menuone'
-let g:clang_cpp_completeopt = 'menuone'
+if dein#tap('vim-clang')
+  let g:clang_auto = 0
+  let g:clang_complete_auto = 0
+  let g:clang_auto_select = 0
+  let g:clang_use_library = 1
+  let g:clang_c_options = '-std=c11'
+  let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+  let g:clang_c_completeopt   = 'menuone'
+  let g:clang_cpp_completeopt = 'menuone'
 
-if executable('clang-3.6')
-    let g:clang_exec = 'clang-3.6'
-elseif executable('clang-3.5')
-    let g:clang_exec = 'clang-3.5'
-elseif executable('clang-3.4')
-    let g:clang_exec = 'clang-3.4'
-else
-    let g:clang_exec = 'clang'
-endif
+  if executable('clang-3.6')
+      let g:clang_exec = 'clang-3.6'
+  elseif executable('clang-3.5')
+      let g:clang_exec = 'clang-3.5'
+  elseif executable('clang-3.4')
+      let g:clang_exec = 'clang-3.4'
+  else
+      let g:clang_exec = 'clang'
+  endif
 
-if executable('clang-format-3.6')
-    let g:clang_format_exec = 'clang-format-3.6'
-elseif executable('clang-format-3.5')
-    let g:clang_format_exec = 'clang-format-3.5'
-elseif executable('clang-format-3.4')
-    let g:clang_format_exec = 'clang-format-3.4'
-else
-    let g:clang_exec = 'clang-format'
+  if executable('clang-format-3.6')
+      let g:clang_format_exec = 'clang-format-3.6'
+  elseif executable('clang-format-3.5')
+      let g:clang_format_exec = 'clang-format-3.5'
+  elseif executable('clang-format-3.4')
+      let g:clang_format_exec = 'clang-format-3.4'
+  else
+      let g:clang_exec = 'clang-format'
+  endif
 endif
 
 
 "=== java.vim
-let g:java_highlight_all=1
-let g:java_highlight_debug=1
-let g:java_allow_cpp_keywords=1
-let g:java_space_errors=1
-let g:java_highlight_functions=1
-
-"=== vim-browsereload-mac"
-let g:returnApp = "iTerm"
-nmap <Space>bc :ChromeReloadStart<CR>
-nmap <Space>bC :ChromeReloadStop<CR>
-nmap <Space>bf :FirefoxReloadStart<CR>
-nmap <Space>bF :FirefoxReloadStop<CR>
-nmap <Space>bs :SafariReloadStart<CR>
-nmap <Space>bS :SafariReloadStop<CR>
-nmap <Space>bo :OperaReloadStart<CR>
-nmap <Space>bO :OperaReloadStop<CR>
-nmap <Space>ba :AllBrowserReloadStart<CR>
-nmap <Space>bA :AllBrowserReloadStop<CR>
-
-
-"=== rhysd/acclerated-jk
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
-
+if dein#tap('java.vim')
+  let g:java_highlight_all=1
+  let g:java_highlight_debug=1
+  let g:java_allow_cpp_keywords=1
+  let g:java_space_errors=1
+  let g:java_highlight_functions=1
+endif
 
 "=== cohama/lexima.vim
-" let g:lexima_enable_basic_rules = 0
-let g:lexima_enable_newline_rules = 0
-
-"=== kobito.app
-function! s:open_kobito(...)
-  if a:0 == 0
-    call system('open -a Kobito '.expand('%:p'))
-  else
-    echom 'open -a Kobito '.join(a:000, ' ')
-    call system('open -a Kobito '.join(a:000, ' '))
-  endif
-endfunction
-
-command! -nargs=* Kobito call s:open_kobito(<f-args>)
-command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobito\" to quit'")
-command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
+if dein#tap('exima.vim')
+  let g:lexima_enable_newline_rules = 0
+endif
 
 
-"=== scrooloose/syntastic
-let g:syntastic_python_checkers = ['flake8', 'pep8']
-let g:syntastic_python_checker_args='--ignore=E501'
-let g:syntastic_python_pep8_args='--ignore=E501'
-let g:syntastic_python_flake8_args = '--ignore="E501"'
 
+
+
+"emmet-vim
+if dein#tap('emmet-vim')
+  let g:user_emmet_leader_key='<C-y>'
+endif
 
 function! Preserve(command)
     " Save the last search.
@@ -430,28 +393,3 @@ endfunction
 
 " Shift + F で自動修正
 autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
-
-"emmet-vim
-let g:user_emmet_leader_key='<C-y>'
-
-"===vim-scripts/javacomplete
-"To enable smart (trying to guess import option) inserting class imports with F4, add:
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-
-" vaComplete-Imports-Add)
-
-"imapble usual (will ask for import option) inserting class imports with F5, add:
-
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-"To add all missing imports with F6:
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-"To remove all missing imports with F7:
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-autocmd FileType java :setlocal omnifunc=javacomplete#Complete
-autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
-
