@@ -19,9 +19,6 @@ call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 " call dein#add('violetyk/neocomplete-php.vim')
 
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
 " it enable to input continuously on a keyboard
 call dein#add('kana/vim-submode')
 
@@ -83,7 +80,7 @@ call dein#add('junegunn/vim-easy-align')
 call dein#add('thinca/vim-quickrun')
 "
 " show modifications
-call dein#add('airblade/vim-gitgutter')
+" call dein#add('airblade/vim-gitgutter')
 " call dein#add('gbarta/evil-noautochdir')
 
 " switch to the missing file without interaction
@@ -116,13 +113,13 @@ call dein#add('tomasr/molokai')
 " call dein#add('kchmck/vim-coffee-script')
 "=== c++
 call dein#add('justmao945/vim-clang')
-call dein#add('Shougo/neoinclude.vim')
+" call dein#add('Shougo/neoinclude.vim')
 call dein#add('vim-jp/vim-cpp')
 
 "=== java"
 call dein#add('vim-scripts/java.vim')
 call dein#add('vim-scripts/javacomplete')
-call dein#add('artur-shaik/vim-javacomplete2')
+" call dein#add('artur-shaik/vim-javacomplete2')
 "===
 " call dein#add('mattn/benchvimrc-vim')
 
@@ -146,7 +143,7 @@ call dein#add('mattn/emmet-vim')
 call dein#add('hail2u/vim-css3-syntax')
 
 "=== j k 高速化
-call dein#add('rhysd/accelerated-jk')
+" call dein#add('rhysd/accelerated-jk')
 
 "=== auto close parentheses and repeat by dot dot...
 call dein#add('cohama/lexima.vim')
