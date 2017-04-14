@@ -33,6 +33,8 @@ on_source = ['snippet', 'neosnippet/user', 'neosnippet/runtime']
 
 #  Utils
 #-----------------------------------------------
+[[plugins]] # a tree explorer
+repo = 'scrooloose/nerdtree'
 
 #  Language
 #-----------------------------------------------
