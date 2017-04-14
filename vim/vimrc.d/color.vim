@@ -9,8 +9,9 @@ if dein#tap('molokai')
   let g:rehash256 = 1
   let g:molokai_original = 1
 endif
+" colorscheme koehler
 
-if dein#tap('candle.vim')
-  colorscheme candle
-endif
-
+" if dein#tap('candle.vim')
+  " colorscheme candle
+" endif
+"
