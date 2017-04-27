@@ -40,10 +40,15 @@ repo = 'Shougo/neocomplete.vim'
 repo    = 'cohama/lexima.vim'
 depends = ['smartchr', 'neocomplete.vim', 'neosnippet']
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
 #  Utils
 #-----------------------------------------------
 [[plugins]] # enable repeating supported plugin maps with dot
 repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 
 # [[plugins]]
@@ -93,8 +98,8 @@ on_map = ['<Plug>(anzu-']
 repo = 'creasty/candle.vim'
 # repo = 'tomasr/molokai'
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
