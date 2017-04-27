@@ -18,25 +18,25 @@ let g:loaded_tutor_mode_plugin = 1
 let g:loaded_man               = 1
 
 function! s:vimrc_environment()
-	let l:env = {}
-	let l:vim_path = $HOME . '/.vim'
-	let l:env.path = {
-		\ 'dein':   l:vim_path . '/dein',
-		\ 'dein_toml': l:vim_path . '/dein.toml',
-		\ 'dein_lazy_toml': l:vim_path . '/dein_lazy.toml',
-		\ 'vimrcd': l:vim_path . '/vimrc.d',
-		\}
-	return l:env
+  let l:env = {}
+  let l:vim_path = $HOME . '/.vim'
+  let l:env.path = {
+    \ 'dein':   l:vim_path . '/dein',
+    \ 'dein_toml': l:vim_path . '/dein.toml',
+    \ 'dein_lazy_toml': l:vim_path . '/dein_lazy.toml',
+    \ 'vimrcd': l:vim_path . '/vimrc.d',
+    \}
+  return l:env
 endfunction
 
 let g:env = s:vimrc_environment()
 function! s:load_file(file)
-	let l:file = g:env.path.vimrcd . '/' . a:file . '.vim'
-	if filereadable(l:file)
-		execute 'source ' . l:file
-	else
-		echomsg 'file not readable:' l:file
-	endif
+  let l:file = g:env.path.vimrcd . '/' . a:file . '.vim'
+  if filereadable(l:file)
+    execute 'source ' . l:file
+  else
+    echomsg 'file not readable:' l:file
+  endif
 endfunction
 
 augroup vimrc
@@ -75,59 +75,62 @@ call s:load_file('basic')
 call s:load_file('keybind')
 call s:load_file('syntax')
 call s:load_file('color')
-"call s:load_file('plugin/autopep8')
+call s:load_file('plugin/autopep8')
 
-if dein#tap('ctrlp')
-	call s:load_file('plugin/ctrlp')
+if dein#tap('ctrlp.vim')
+  call s:load_file('plugin/ctrlp')
 endif
 if dein#tap('emmet-vim')
-	call s:load_file('plugin/emmet-vim')
+  call s:load_file('plugin/emmet-vim')
 endif
 if dein#tap('indentLine')
-	call s:load_file('plugin/indentLine')
+  call s:load_file('plugin/indentLine')
 endif
 if dein#tap('java')
-	call s:load_file('plugin/java')
+  call s:load_file('plugin/java')
 endif
 if dein#tap('lexima')
-	call s:load_file('plugin/lexima')
+  call s:load_file('plugin/lexima')
 endif
 if dein#tap('lightline')
-	call s:load_file('plugin/lightline')
+  call s:load_file('plugin/lightline')
 endif
 if dein#tap('neocomplete')
-	call s:load_file('plugin/neocomplete')
+  call s:load_file('plugin/neocomplete')
 endif
 if dein#tap('nerdcommenter')
-	call s:load_file('plugin/nerdcommenter')
+  call s:load_file('plugin/nerdcommenter')
 endif
 if dein#tap('nerdtree')
-	call s:load_file('plugin/nerdtree')
+  call s:load_file('plugin/nerdtree')
 endif
 if dein#tap('regex.py')
-	call s:load_file('plugin/regex.py')
+  call s:load_file('plugin/regex.py')
 endif
 if dein#tap('result')
-	call s:load_file('plugin/result')
+  call s:load_file('plugin/result')
 endif
 if dein#tap('syntastic')
-	call s:load_file('plugin/syntastic')
+  call s:load_file('plugin/syntastic')
 endif
 if dein#tap('unite')
-	call s:load_file('plugin/unite')
+  call s:load_file('plugin/unite')
 endif
 if dein#tap('vim-clang')
-	call s:load_file('plugin/vim-clang')
+  call s:load_file('plugin/vim-clang')
 endif
 if dein#tap('vim-closetag')
-	call s:load_file('plugin/vim-closetag')
+  call s:load_file('plugin/vim-closetag')
 endif
 if dein#tap('vim-gitgutter')
-	call s:load_file('plugin/vim-gitgutter')
+  call s:load_file('plugin/vim-gitgutter')
+endif
+if dein#tap('vim-flake8')
+  call s:load_file('plugin/vim-flake8')
 endif
 if dein#tap('vim-submode')
-	call s:load_file('plugin/vim-submode')
+  call s:load_file('plugin/vim-submode')
 endif
 if dein#tap('vim-surround')
-	call s:load_file('plugin/vim-surround')
+  call s:load_file('plugin/vim-surround')
 endif
