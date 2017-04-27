@@ -7,6 +7,7 @@ alias vi="mvim -g"
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
+alias ps='pstree'
 
 # command options
 #---------------------------------------------------------------------
@@ -43,10 +44,20 @@ alias -g gi="$GITHUB"
 alias -g dj="$GITHUB/django/django"
 alias -g crea="$GITHUB/creasty/"
 
+# github.com/locona
+#---------------------------------------------------------------------
 alias -g lo="$LOCONA"
+
+### dotfiles
 alias -g dot="$LOCONA/dotfiles"
+alias -g dotvim="$LOCONA/dotfiles/vim"
+alias -g dotvimd="$LOCONA/dotfiles/vim/vimrc.d"
+alias -g dotplugin="$LOCONA/dotfiles/vim/vimrc.d/plugin"
+alias -g dotzsh="$LOCONA/dotfiles/zsh"
+
 alias -g ignis="$LOCONA/Ignis"
 alias -g es="$LOCONA/espeon"
+alias -g mach="$LOCONA/machine-learning"
 alias -g re="$GITHUB/django_rest_framework"
 alias -g react="$LOCONA/react_django_boilerplate"
 alias -g cw="$LOCONA/crawler"
@@ -85,6 +96,7 @@ alias dt='python manage.py test'
 alias -g sce='--settings=CE_app.settings'
 alias -g sadmin='--settings=settings.admin'
 alias -g ssn='--settings=snoopy.config.settings.test'
+alias -g smaegari='--settings=settings.maegari_dev'
 
 # Go
 #-----------------------------------------------------
