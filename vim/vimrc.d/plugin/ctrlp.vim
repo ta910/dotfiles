@@ -6,7 +6,8 @@ let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで�
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|build)$'
+" let g:ctrlp_custom_ignore = '\v[\/]\.(node_modules|build|vendor/bin)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(vendor)$'
 " Keybind
 "-----------------------------------------------
 nnoremap s <Nop>
