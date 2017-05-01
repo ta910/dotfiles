@@ -18,7 +18,7 @@ augroup fileTypeIndent
   autocmd BufRead,BufNewFile *.css setf css
   autocmd BufRead,BufNewFile *.scss setf scss
   autocmd BufRead,BufNewFile *.zsh setf zsh
-  autocmd BufRead,BufNewFile *.js setf js
+  autocmd BufRead,BufNewFile *.js setf javascript
   autocmd BufRead,BufNewFile *.java setf java
   autocmd BufRead,BufNewFile *.json setf json
   autocmd BufRead,BufNewFile *.vim setf vim
@@ -27,4 +27,5 @@ augroup fileTypeIndent
   autocmd BufRead,BufNewFile *.rb setf ruby
   autocmd BufRead,BufNewFile *.c setf c
   autocmd BufRead,BufNewFile *.sh setf sh
+  autocmd BufRead,BufNewFile *.yaml setf yaml
 augroup END
