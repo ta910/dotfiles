@@ -1,9 +1,5 @@
 #  Editing
 #-----------------------------------------------
-[[plugins]] # define your own operator easily
-repo  = 'kana/vim-operator-user'
-on_if = 1
-
 [[plugins]] # a simple, easy-to-use Vim alignment plugin
 repo   = 'junegunn/vim-easy-align'
 on_cmd = ['EasyAlign']
@@ -16,6 +12,24 @@ on_func = ['emmet']
 [[plugins]]
 repo = 'tpope/vim-surround'
 on_i = 1
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depends = ['vim-operator-user']
+on_map = ['<Plug>(operator-replace)']
+
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+depends = ['vim-operator-user']
+on_map = [
+  '<Plug>(operator-camelize)',
+  '<Plug>(operator-decamelize)',
+  '<Plug>(operator-camelize-toggle)',
+]
+
+[[plugins]]
+repo = 't9md/vim-textmanip'
+on_map = ['<Plug>(textmanip-']
 
 #  Completion
 #-----------------------------------------------
@@ -38,6 +52,9 @@ repo = 'Shougo/neosnippet-snippets'
 #-----------------------------------------------
 [[plugins]] # a tree explorer
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'kiteco/vim-plugin'
 
 
 # Linter
