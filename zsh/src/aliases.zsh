@@ -73,6 +73,7 @@ GOPUSHUB="$HOME/gopus/src/github.com/locona"
 alias -g gopus="$HOME/gopus"
 alias -g gocha="$GOPUSHUB/gocha"
 alias -g gabula="$GOPUSHUB/gabula"
+alias -g ganesha="$GOPUSHUB/ganesha"
 
 # alias ag="ag --pager='less -R'"
 
