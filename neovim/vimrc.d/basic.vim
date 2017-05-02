@@ -19,7 +19,6 @@ let g:loaded_man               = 1
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
-
 let mapleader = ","     " キーマップリーダー
 set number              " 行番号を表示
 set title               " 編集中のファイル名を表示
@@ -33,13 +32,11 @@ set backspace=indent,eol,start "バックスペース使用可能
 set nowrap              "折り返ししない
 set virtualedit=block
 set noswapfile          "スワップファイル作らない
-
 set expandtab           "タブ入力を複数の空hバク入力に置き換える
 set smarttab            "新しい行を作った時に高度な自動インデントを行う
 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent          "改行時に前の行のインデントを計測
 set smartindent         "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
-
 set hlsearch            "検索結果ハイライト
 set pumheight=10        "補完ポップアップの高さ
 
