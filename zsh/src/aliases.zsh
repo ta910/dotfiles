@@ -49,6 +49,7 @@ alias -g crea="$GITHUB/creasty/"
 alias -g lo="$LOCONA"
 
 ### dotfiles
+alias -g gist="$LOCONA/gist"
 alias -g dot="$LOCONA/dotfiles"
 alias -g dotvim="$LOCONA/dotfiles/vim"
 alias -g dotvimd="$LOCONA/dotfiles/vim/vimrc.d"
@@ -91,6 +92,7 @@ alias dsu='python manage.py show_urls'
 alias dsm='python manage.py showmigrations'
 alias dmm='python manage.py makemigrations'
 alias dm='python manage.py migrate'
+alias dms='python manage.py dbshell'
 alias dsa='python manage.py startapp'
 alias dt='python manage.py test'
 #### settings
