@@ -2,9 +2,11 @@
 #---------------------------------------------------------------------
 alias vim="nvim"
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias vi="gnvim"
+
 alias ali='vim $HOME/.zsh/src/aliases.zsh'
 alias exp='vim $HOME/.zsh/src/exports.zsh'
-alias vi="mvim -g"
+
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
