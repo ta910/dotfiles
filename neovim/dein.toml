@@ -89,7 +89,9 @@ repo = 'christoomey/vim-tmux-navigator'
 repo = 'itchyny/lightline.vim'
 
 [[plugins]]
-repo = 'tomasr/molokai'
+repo = 'justinmk/molokai'
+# repo = 'tamelion/neovim-molokai'
+# repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
