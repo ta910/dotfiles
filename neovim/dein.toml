@@ -47,7 +47,7 @@ repo = 'zchee/deoplete-jedi'
 
 [[plugins]] # auto close parentheses and repeat by dot
 repo    = 'cohama/lexima.vim'
-depends = ['smartchr', 'neosnippet']
+depends = ['smartchr']
 
 [[plugins]]
 repo = 'alvan/vim-closetag'
