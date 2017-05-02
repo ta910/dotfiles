@@ -43,11 +43,11 @@ repo = 'scrooloose/nerdcommenter'
 repo = 'Shougo/deoplete.nvim'
 
 [[plugins]]
-repo = "Shougo/neocomplete.vim"
+repo = 'zchee/deoplete-jedi'
 
 [[plugins]] # auto close parentheses and repeat by dot
 repo    = 'cohama/lexima.vim'
-depends = ['smartchr', 'neocomplete.vim', 'neosnippet']
+depends = ['smartchr', 'neosnippet']
 
 [[plugins]]
 repo = 'alvan/vim-closetag'

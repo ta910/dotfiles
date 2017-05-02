@@ -16,6 +16,8 @@ let g:loaded_LogiPat           = 1
 let g:loaded_logipat           = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_man               = 1
+let g:loaded_python_provider   = 1
+let g:python3_host_prog        = "/Users/locona/.anyenv/envs/pyenv/shims/python3"
 
 function! s:vimrc_environment()
   let l:env = {}

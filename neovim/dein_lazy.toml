@@ -37,20 +37,20 @@ depends = ['vim-operator-user']
 
 #  Completion
 #-----------------------------------------------
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
 [[plugins]] # accurately completing C and C++ code
 repo  = 'Rip-Rip/clang_complete'
 on_ft = ['clang', 'objc']
 
 [[plugins]] # adds snippet support
 repo      = 'Shougo/neosnippet'
-depends   = ['neocomplete.vim', 'emmet-vim']
+depends   = ['emmet-vim']
 on_cmd    = ['NeoSnippetEdit', 'NeoSnippetSource']
 on_ft     = 'snippet'
 on_i      = 1
 on_source = ['snippet', 'neosnippet/user', 'neosnippet/runtime']
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 
 #  Utils
 #-----------------------------------------------
