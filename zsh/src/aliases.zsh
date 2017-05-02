@@ -1,5 +1,6 @@
 # override default command
 #---------------------------------------------------------------------
+alias vim="nvim"
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 alias ali='vim $HOME/.zsh/src/aliases.zsh'
 alias exp='vim $HOME/.zsh/src/exports.zsh'
@@ -55,6 +56,7 @@ alias -g dotvim="$LOCONA/dotfiles/vim"
 alias -g dotvimd="$LOCONA/dotfiles/vim/vimrc.d"
 alias -g dotplugin="$LOCONA/dotfiles/vim/vimrc.d/plugin"
 alias -g dotzsh="$LOCONA/dotfiles/zsh"
+alias -g dotneo="$LOCONA/dotfiles/neovim"
 
 alias -g ignis="$LOCONA/Ignis"
 alias -g es="$LOCONA/espeon"
@@ -107,7 +109,6 @@ alias gr="go run"
 alias gb="go build -o"
 alias gc="goose create"
 
-
 # direnv
 #-----------------------------------------------------
 alias dire='direnv edit .'
@@ -116,7 +117,6 @@ alias dira='direnv allow'
 # gsed
 #-----------------------------------------------------
 alias gs='gsed --in-place' # 's/target/converted/g' filepath
-
 
 # elasticsearch
 #-----------------------------------------------------

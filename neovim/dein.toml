@@ -1,0 +1,122 @@
+# Base
+#-------------------------------------------------------
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+# Editing
+#-----------------------------------------------------
+[[plugins]] # text objects for indented blocks of lines
+repo    = 'kana/vim-textobj-indent'
+depends = ['vim-textobj-user']
+
+[[plugins]] # create your own text objects
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+depends = ['vim-textobj-user']
+
+[[plugins]] # adds text-objects for word-based columns
+repo = 'coderifous/textobj-word-column.vim'
+
+
+
+[[plugins]] # f/t motions to highlight all possible choices
+repo = 'Lokaltog/vim-easymotion'
+
+[[plugins]] # commenting code
+repo = 'scrooloose/nerdcommenter'
+
+[[plugins]] # next generation of auto completion framework
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = "Shougo/neocomplete.vim"
+
+[[plugins]] # auto close parentheses and repeat by dot
+repo    = 'cohama/lexima.vim'
+depends = ['smartchr', 'neocomplete.vim', 'neosnippet']
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
+#  Utils
+#-----------------------------------------------
+[[plugins]] # enable repeating supported plugin maps with dot
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+
+# [[plugins]]
+# repo = 'cocopon/vaffle.vim'
+# repo = 'justinmk/vim-dirvish'
+
+[[plugins]]
+repo = 'tpope/vim-eunuch'
+
+[[plugins]]
+repo = 'tpope/vim-unimpaired'
+
+# [[plugins]] # pseudo clipboard register
+# repo = 'kana/vim-fakeclip'
+
+# [[plugins]] # run commands quickly
+# repo = 'thinca/vim-quickrun'
+
+[[plugins]] # create your own submodes
+repo = 'kana/vim-submode'
+
+[[plugins]] # ctags generator
+repo = 'szw/vim-tags'
+
+[[plugins]]
+repo = 'christoomey/vim-tmux-navigator'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+#  Appearance
+#-----------------------------------------------
+# [[plugins]] # toggle, display and navigate marks
+# repo = 'kshenoy/vim-signature'
+
+[[plugins]] # search status
+repo   = 'osyo-manga/vim-anzu'
+on_map = ['<Plug>(anzu-']
+
+[[plugins]] # candle theme
+repo = 'creasty/candle.vim'
+# repo = 'tomasr/molokai'
+
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+#  Language
+#-----------------------------------------------
+[[plugins]] # React JSX syntax highlighting and indenting
+repo = 'mxw/vim-jsx'
+
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'

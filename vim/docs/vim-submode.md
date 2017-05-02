@@ -1,1 +1,0 @@
-/Users/locona/dotfiles/vim/docs/vim-submode.md
