@@ -53,7 +53,7 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 " Required:
-set runtimepath^=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=/Users/locona/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state(g:env.path.dein)
   call dein#begin(g:env.path.dein, [expand('<sfile>'), g:env.path.dein_toml, g:env.path.dein_lazy_toml])
