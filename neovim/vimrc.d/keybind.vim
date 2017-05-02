@@ -1,7 +1,7 @@
 "=== KEYBIND VIM-EDITOR (NOT PLUGIN KEYBIND)
 
 " PrefixKey
-nnoremap <Space>r :source ~/.vimrc<Enter>
+nnoremap <Space>r :source ~/.config/nvim/init.vim<Enter>
 
 "====== NORMAL
 nnoremap q: :q
