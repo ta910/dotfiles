@@ -123,3 +123,7 @@ alias gs='gsed --in-place' # 's/target/converted/g' filepath
 # elasticsearch
 #-----------------------------------------------------
 alias elpl='elasticsearch-plugin'
+
+# fluentd
+#-----------------------------------------------------
+alias flu='fluentd'
