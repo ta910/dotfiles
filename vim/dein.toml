@@ -98,10 +98,6 @@ repo = 'ctrlpvim/ctrlp.vim'
 repo   = 'osyo-manga/vim-anzu'
 on_map = ['<Plug>(anzu-']
 
-[[plugins]] # candle theme
-repo = 'creasty/candle.vim'
-# repo = 'tomasr/molokai'
-
 # [[plugins]]
 # repo = 'airblade/vim-gitgutter'
 
