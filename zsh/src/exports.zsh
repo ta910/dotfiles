@@ -17,4 +17,3 @@ export GOPATH=/Users/locona/gopus
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export ELASTICPATH=/usr/local/bin/elasticsearch
 export XDG_CONFIG_HOME="~/.config"
-

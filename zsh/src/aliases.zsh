@@ -1,8 +1,7 @@
 # override default command
 #---------------------------------------------------------------------
-alias vim="nvim"
 alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
-alias vi="gnvim"
+alias vi="mvim -g"
 
 alias ali='vim $HOME/.zsh/src/aliases.zsh'
 alias exp='vim $HOME/.zsh/src/exports.zsh'
