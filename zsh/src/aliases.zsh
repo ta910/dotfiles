@@ -59,6 +59,7 @@ alias -g dotplugin="$LOCONA/dotfiles/vim/vimrc.d/plugin"
 alias -g dotzsh="$LOCONA/dotfiles/zsh"
 alias -g dotneo="$LOCONA/dotfiles/neovim"
 
+alias -g bell="$LOCONA/bellagio"
 alias -g ignis="$LOCONA/Ignis"
 alias -g es="$LOCONA/espeon"
 alias -g mach="$LOCONA/machine-learning"
