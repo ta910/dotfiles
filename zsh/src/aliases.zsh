@@ -75,6 +75,7 @@ alias -g sn="$CREDITENGINE/snoopy"
 #----------------------------------------------------------
 GOPUSHUB="$HOME/gopus/src/github.com/locona"
 alias -g gopus="$HOME/gopus"
+alias -g glo="$GOPUSHUB"
 alias -g gocha="$GOPUSHUB/gocha"
 alias -g gabula="$GOPUSHUB/gabula"
 alias -g ganesha="$GOPUSHUB/ganesha"
