@@ -9,7 +9,7 @@ alias exp='vim $HOME/.zsh/src/exports.zsh'
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
-alias ps='pstree'
+alias pst='pstree'
 
 # command options
 #---------------------------------------------------------------------
