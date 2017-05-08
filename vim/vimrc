@@ -128,8 +128,8 @@ endif
 if dein#tap('vim-flake8')
   call s:load_file('plugin/vim-flake8')
 endif
-if dein#tap('vim-submode')
-  call s:load_file('plugin/vim-submode')
+if dein#tap('vim-go')
+  call s:load_file('plugin/vim-go')
 endif
 if dein#tap('vim-surround')
   call s:load_file('plugin/vim-surround')
