@@ -74,14 +74,23 @@ alias -g sn="$CREDITENGINE/snoopy"
 
 # go working space
 #----------------------------------------------------------
-GOPUSHUB="$HOME/gopus/src/github.com/locona"
+GOPUSLOCONA="$HOME/gopus/src/github.com/locona"
+GOPUS3SHAKE="$HOME/gopus/src/github.com/3-shake"
 alias -g gopus="$HOME/gopus"
-alias -g glo="$GOPUSHUB"
-alias -g gocha="$GOPUSHUB/gocha"
-alias -g gabula="$GOPUSHUB/gabula"
-alias -g ganesha="$GOPUSHUB/ganesha"
+alias -g glo="$GOPUSLOCONA"
+alias -g gocha="$GOPUSLOCONA/gocha"
+alias -g gabula="$GOPUSLOCONA/gabula"
+alias -g ganesha="$GOPUSLOCONA/ganesha"
 
-# alias ag="ag --pager='less -R'"
+#-----------------------------------------------------
+alias -g shake="$GOPUS3SHAKE"
+alias -g shakerec="$GOPUS3SHAKE/reckoner"
+alias -g shakeapi="$GOPUS3SHAKE/reckoner-api"
+alias -g shakein="$GOPUS3SHAKE/reckoner-infra"
+alias -g shakecli="$GOPUS3SHAKE/reckoner-client-web"
+alias -g shakecol="$GOPUS3SHAKE/reckoner-collector"
+alias -g shakeag="$GOPUS3SHAKE/reckoner-aggregator"
+alias -g mok="$GOPUS3SHAKE/mokuru-api"
 
 # Git
 #---------------------------------------------------------------------
