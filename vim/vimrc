@@ -112,6 +112,9 @@ endif
 if dein#tap('vim-go')
   call s:load_file('plugin/vim-go')
 endif
+if dein#tap('vim-json')
+  call s:load_file('plugin/vim-json')
+endif
 if dein#tap('vim-surround')
   call s:load_file('plugin/vim-surround')
 endif
