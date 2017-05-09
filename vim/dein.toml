@@ -44,6 +44,16 @@ repo = 'Shougo/neocomplete.vim'
 repo    = 'cohama/lexima.vim'
 depends = ['smartchr', 'neocomplete.vim', 'neosnippet']
 
+[[plugins]] # adds snippet support
+repo      = 'Shougo/neosnippet'
+depends   = ['neocomplete.vim', 'emmet-vim']
+on_cmd    = ['NeoSnippetEdit', 'NeoSnippetSource']
+on_ft     = 'snippet'
+on_i      = 1
+on_source = ['snippet', 'neosnippet/user', 'neosnippet/runtime']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'alvan/vim-closetag'
 #  Utils
