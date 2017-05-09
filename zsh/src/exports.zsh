@@ -16,4 +16,4 @@ export GOPATH=/Users/locona/gopus
 export ELASTICPATH=/usr/local/Cellar/elasticsearch/5.3.2/bin
 # export XDG_CONFIG_HOME="~/.config"
 
-source ./credentials.zsh
+source $HOME/.zsh/src/credentials.zsh
