@@ -90,6 +90,7 @@ alias -g shakein="$GOPUS3SHAKE/reckoner-infra"
 alias -g shakecli="$GOPUS3SHAKE/reckoner-client-web"
 alias -g shakecol="$GOPUS3SHAKE/reckoner-collector"
 alias -g shakeag="$GOPUS3SHAKE/reckoner-aggregator"
+alias -g shakedmp="$GOPUS3SHAKE/reckoner-dmp-api"
 alias -g mok="$GOPUS3SHAKE/mokuru-api"
 
 # Git
