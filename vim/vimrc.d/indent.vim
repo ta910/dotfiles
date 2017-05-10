@@ -12,7 +12,6 @@ filetype indent on
 
 augroup fileTypeIndent
   autocmd!
-  autocmd Filetype conf setf conf
   autocmd BufRead,BufNewFile *.toml setf toml
   autocmd BufRead,BufNewFile *.html setf html
   autocmd BufRead,BufNewFile *.css setf css
