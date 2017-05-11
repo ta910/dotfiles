@@ -138,3 +138,13 @@ alias elpl='elasticsearch-plugin'
 # fluentd
 #-----------------------------------------------------
 alias flu='fluentd'
+
+alias -g tailkinesis="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-development-tracking-js | jq ."
+
+# docker
+#-----------------------------------------------------
+
+alias dku="docker-compose up"
+alias dkud="docker-compose up -d"
+alias dkdv="docker-compose down -v"
+alias dkp="docker-compose ps"
