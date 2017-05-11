@@ -51,8 +51,12 @@ alias -g crea="$GITHUB/creasty/"
 alias -g lo="$LOCONA"
 alias -g ura="$LOCONA/mygrad_urashima"
 
+### gist
+GIST="$LOCONA/gist"
+alias -g gist="$GIST"
+alias -g gistshake="$GIST/3shake"
+alias -g gistwsn="$GIST/wsn"
 ### dotfiles
-alias -g gist="$LOCONA/gist"
 alias -g dot="$LOCONA/dotfiles"
 alias -g dotvim="$LOCONA/dotfiles/vim"
 alias -g dotvimd="$LOCONA/dotfiles/vim/vimrc.d"
