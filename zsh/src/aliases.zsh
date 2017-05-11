@@ -49,6 +49,7 @@ alias -g crea="$GITHUB/creasty/"
 # github.com/locona
 #---------------------------------------------------------------------
 alias -g lo="$LOCONA"
+alias -g ura="$LOCONA/mygrad_urashima"
 
 ### dotfiles
 alias -g gist="$LOCONA/gist"
