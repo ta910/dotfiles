@@ -15,15 +15,12 @@ set guioptions+=c
 set guioptions-=T
 set guioptions-=m
 
-" disable gui tabline
-set guioptions-=e
-
 " make tabs more readable
-set guitablabel=%N\ %t%M
+" set guitablabel=%N\ %t%M
 
 " new window menu
-menu File.New\ Window <Nop>
-macm File.New\ Window action=newWindow: key=<D-n>
+" menu File.New\ Window <Nop>
+" macm File.New\ Window action=newWindow: key=<D-n>
 
 " send print jobs to Preview.app
 set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
