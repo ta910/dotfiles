@@ -111,6 +111,14 @@ on_ft = ['elixir']
 repo  = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'mxw/vim-jsx'
+on_ft = ['javascript']
+
 [[plugins]] # python support for vim
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
