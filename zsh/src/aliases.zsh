@@ -165,3 +165,4 @@ alias dcp="docker-compose ps"
 
 alias ncu="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/ncu"
 alias npm-check-updates="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/npm-check-updates"
+alias create-react-app="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/create-react-app/index.js"
