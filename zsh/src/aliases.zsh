@@ -9,7 +9,7 @@ alias exp='vim $HOME/.zsh/src/exports.zsh'
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
-alias pst='pstree'
+# alias ctags="brew --prefix/bin/ctags"
 
 # command options
 #---------------------------------------------------------------------
@@ -20,6 +20,7 @@ alias -g T='| tail'
 alias -g S='| sort'
 alias -g W='| wc'
 alias -g X='| xargs'
+alias -g J='| jq .'
 
 
 alias -g ...='../..'
@@ -33,6 +34,10 @@ alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
+
+# pstree
+#---------------------------------------------------------------------
+alias pst='pstree'
 
 # directories
 #---------------------------------------------------------------------
