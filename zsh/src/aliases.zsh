@@ -151,10 +151,13 @@ alias flu='fluentd'
 
 alias -g tailkinesis="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-development-tracking-js | jq ."
 
-# docker
+# docker-compose
 #-----------------------------------------------------
+alias dcu="docker-compose up"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down -v"
+alias dcdv="docker-compose down -v"
+alias dcp="docker-compose ps"
 
-alias dku="docker-compose up"
-alias dkud="docker-compose up -d"
-alias dkdv="docker-compose down -v"
-alias dkp="docker-compose ps"
+alias ncu="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/ncu"
+alias npm-check-updates="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/npm-check-updates"
