@@ -21,3 +21,5 @@ export ELASTICPATH=/usr/local/Cellar/elasticsearch/5.3.2/bin
 # export XDG_CONFIG_HOME="~/.config"
 # export ES_HEAP_SIZE=8g
 # export ES_JAVA_OPTS=-Xms8g -Xmx8g
+
+source $HOME/.zsh/src/confidentials.zsh
