@@ -1,5 +1,5 @@
 #!/bin/sh
-sed -e
+# sed -e
 
 function create_symlink() {
   if [ -d $HOME/.zsh/src ]; then
@@ -26,9 +26,7 @@ fi
 
 
 # if [ ! `which anyenv` ]; then
-echo "hello"
 # export is in zsh/src/exports.zsh
-git clone https://github.com/riywo/anyenv $HOME/.anyenv
 exec $SHELL -l
 # fi
 
