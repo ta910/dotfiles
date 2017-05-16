@@ -96,16 +96,16 @@ alias -g ganesha="$GOPUSLOCONA/ganesha"
 alias -g ginsp="$GOPUSLOCONA/gin-spatium"
 
 #-----------------------------------------------------
-alias -g shake="$GOPUS3SHAKE"
-alias -g shakerec="$GOPUS3SHAKE/reckoner"
-alias -g shakeapi="$GOPUS3SHAKE/reckoner-api"
-alias -g shakein="$GOPUS3SHAKE/reckoner-infra"
-alias -g shakeinld="$GOPUS3SHAKE/reckoner-infra/local/docker"
-alias -g shakecli="$GOPUS3SHAKE/reckoner-client-web"
-alias -g shakecol="$GOPUS3SHAKE/reckoner-collector"
-alias -g shakeag="$GOPUS3SHAKE/reckoner-aggregator"
-alias -g shakedmp="$GOPUS3SHAKE/reckoner-dmp-api"
-alias -g mok="$GOPUS3SHAKE/mokuru-api"
+alias -g s="$GOPUS3SHAKE"
+alias -g srec="$GOPUS3SHAKE/reckoner"
+alias -g sapi="$GOPUS3SHAKE/reckoner-api"
+alias -g sin="$GOPUS3SHAKE/reckoner-infra"
+alias -g sinld="$GOPUS3SHAKE/reckoner-infra/local/docker"
+alias -g scli="$GOPUS3SHAKE/reckoner-client-web"
+alias -g scol="$GOPUS3SHAKE/reckoner-collector"
+alias -g sag="$GOPUS3SHAKE/reckoner-aggregator"
+alias -g sdmp="$GOPUS3SHAKE/reckoner-dmp-api"
+alias -g smok="$GOPUS3SHAKE/mokuru-api"
 
 # Git
 #---------------------------------------------------------------------
@@ -133,7 +133,7 @@ alias -g smaegari='--settings=settings.maegari_dev'
 # Go
 #-----------------------------------------------------
 alias gr="go run"
-alias gb="go build -o"
+alias gb="go build ."
 alias gc="goose create"
 
 # direnv
