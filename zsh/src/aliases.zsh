@@ -63,13 +63,16 @@ alias -g gistshake="$GIST/3shake"
 alias -g gistwsn="$GIST/wsn"
 alias -g gistgin="$GIST/gin-lecti-association"
 ### dotfiles
-alias -g dot="$LOCONA/dotfiles"
-alias -g dotvim="$LOCONA/dotfiles/vim"
-alias -g dotvimd="$LOCONA/dotfiles/vim/vimrc.d"
-alias -g dotplugin="$LOCONA/dotfiles/vim/vimrc.d/plugin"
-alias -g dotzsh="$LOCONA/dotfiles/zsh"
-alias -g dotneo="$LOCONA/dotfiles/neovim"
+DOTFILES=$LOCONA/dotfiles
+alias -g dot="$DOTFILES"
+alias -g dotvim="$DOTFILES/vim"
+alias -g dotvimd="$DOTFILES/vim/vimrc.d"
+alias -g dotplugin="$DOTFILES/vim/vimrc.d/plugin"
+alias -g dotzsh="$DOTFILES/zsh"
+alias -g dotvagrant="$DOTFILES/vagrant"
+alias -g dotneo="$DOTFILES/neovim"
 
+alias -g umb=$LOCONA/umbra
 alias -g bell="$LOCONA/bellagio"
 alias -g ignis="$LOCONA/Ignis"
 alias -g es="$LOCONA/espeon"
