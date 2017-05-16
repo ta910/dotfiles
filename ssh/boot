@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -u
+SSH_PATH=$HOME/.ssh
+CONFD_PATH=$SSH_PATH/conf.d
+CURRENT_PATH=`pwd`
+
+if [ ! -d $SSH_PATH || ! -d $CONFD_PATH/{hosts,keys} ]; then
+  mkdir -p $HOME/.ssh/conf.d/hosts
+  mkdir -p $HOME/.ssh/conf.d/keys
+fi
+
+if [ ! -e $CONFD_PATH/keys/id_rsa ]; then
+  echo You must generate id_rsa file of ssh-key
+  ssh-keygen -t rsa
+  exit 1
+fi
+
+echo "#### Symbolic link for ssh ####"
+[ -e $SSH_PATH/config ] || ln -s $CURRENT_PATH/config $SSH_PATH/config
+[ -e $SSH_PATH/conf.d/hosts/github ] || ln -s $CURRENT_PATH/conf.d/hosts/github $SSH_PATH/conf.d/hosts/github
+echo "#### END ####"
