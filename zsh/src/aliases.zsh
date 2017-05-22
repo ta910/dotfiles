@@ -20,7 +20,9 @@ alias -g T='| tail'
 alias -g S='| sort'
 alias -g W='| wc'
 alias -g X='| xargs'
+alias -g XK='| xargs kill -9'
 alias -g J='| jq .'
+alias -g JL='| jq length'
 
 
 alias -g ...='../..'
@@ -61,6 +63,7 @@ GIST="$LOCONA/gist"
 alias -g gist="$GIST"
 alias -g gistshake="$GIST/3shake"
 alias -g gistwsn="$GIST/wsn"
+alias -g gistlab="$GIST/lab/paper/wsn_virtualazation"
 alias -g gistgin="$GIST/gin-lecti-association"
 ### dotfiles
 DOTFILES=$LOCONA/dotfiles
