@@ -4,6 +4,7 @@ set smartindent         "改行時に入力された行の末尾に合わせて�
 set cindent             "Cプログラムファイルの自動インデントを始める
 set smarttab            "新しい行を作った時に高度な自動インデントを行う
 set expandtab           "タブ入力を複数の空白に置き換える
+set tabstop=2 shiftwidth=2 softtabstop=0
 
 "ファイルタイプの検索を有効にする
 filetype plugin on
@@ -11,7 +12,8 @@ filetype plugin on
 filetype indent on
 
 augroup fileTypeIndent
-  autocmd!
+  autocmd
+  autocmd BufRead,BufNewFile *.gitconfig setf gitconfig
   autocmd BufRead,BufNewFile *.toml setf toml
   autocmd BufRead,BufNewFile *.html setf html
   autocmd BufRead,BufNewFile *.css setf css
