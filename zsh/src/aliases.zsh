@@ -9,7 +9,9 @@ alias exp='vim $HOME/.zsh/src/exports.zsh'
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
-# alias ctags="brew --prefix/bin/ctags"
+alias ps='ps aux'
+alias cat='ccat'
+# alias ctags="`brew --prefix`/bin/ctags"
 
 # command options
 #---------------------------------------------------------------------
