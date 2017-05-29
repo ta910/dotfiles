@@ -29,4 +29,6 @@ augroup fileTypeIndent
   autocmd BufRead,BufNewFile *.c setf c
   autocmd BufRead,BufNewFile *.sh setf sh
   autocmd BufRead,BufNewFile *.yaml setf yaml
+  autocmd BufRead,BufNewFile *.scala setf scala
+  autocmd BufRead,BufNewFile *.gradle setf groovy
 augroup END
