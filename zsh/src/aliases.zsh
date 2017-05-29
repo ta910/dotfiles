@@ -86,6 +86,7 @@ alias -g re="$GITHUB/django_rest_framework"
 alias -g react="$LOCONA/react_django_boilerplate"
 alias -g cw="$LOCONA/crawler"
 alias -g ra="$LOCONA/raaiki"
+alias -g ven="$LOCONA/ventum"
 alias -g ex="$LOCONA/expressio"
 alias -g xm="/Applications/XMTrading.app/drive_c/Program Files/XMTrading MT4/MQL4"
 alias -g ce="$CREDITENGINE/CE_app"
@@ -142,6 +143,7 @@ alias -g smaegari='--settings=settings.maegari_dev'
 #-----------------------------------------------------
 alias gr="go run"
 alias gb="go build ."
+alias gt="go test"
 alias gc="goose create"
 
 # direnv
