@@ -58,6 +58,9 @@ repo = 'tpope/vim-repeat'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]] # ctags generator
+repo = 'szw/vim-tags'
+
 
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
