@@ -16,6 +16,7 @@ alias cat='ccat'
 # command options
 #---------------------------------------------------------------------
 alias -g G='| grep'
+alias -g GE='| grep -e'
 alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tail'
@@ -77,6 +78,7 @@ alias -g dotzsh="$DOTFILES/zsh"
 alias -g dotvagrant="$DOTFILES/vagrant"
 alias -g dotneo="$DOTFILES/neovim"
 
+alias -g nob="$LOCONA/noblesse"
 alias -g umb=$LOCONA/umbra
 alias -g bell="$LOCONA/bellagio"
 alias -g ignis="$LOCONA/Ignis"
@@ -88,6 +90,7 @@ alias -g cw="$LOCONA/crawler"
 alias -g ra="$LOCONA/raaiki"
 alias -g ven="$LOCONA/ventum"
 alias -g ex="$LOCONA/expressio"
+alias -g grad="$LOCONA/grad_template/intermediate/resume"
 alias -g xm="/Applications/XMTrading.app/drive_c/Program Files/XMTrading MT4/MQL4"
 alias -g ce="$CREDITENGINE/CE_app"
 alias -g lendy="$CREDITENGINE/lendy"
@@ -99,22 +102,25 @@ GOPUSLOCONA="$HOME/gopus/src/github.com/locona"
 GOPUS3SHAKE="$HOME/gopus/src/github.com/3-shake"
 alias -g gopus="$HOME/gopus"
 alias -g glo="$GOPUSLOCONA"
+alias -g spur="$GOPUSLOCONA/spur"
 alias -g gocha="$GOPUSLOCONA/gocha"
 alias -g gabula="$GOPUSLOCONA/gabula"
 alias -g ganesha="$GOPUSLOCONA/ganesha"
 alias -g ginsp="$GOPUSLOCONA/gin-spatium"
 
 #-----------------------------------------------------
-alias -g s="$GOPUS3SHAKE"
+alias -g shake="$GOPUS3SHAKE"
 alias -g srec="$GOPUS3SHAKE/reckoner"
 alias -g sapi="$GOPUS3SHAKE/reckoner-api"
 alias -g sin="$GOPUS3SHAKE/reckoner-infra"
 alias -g sinld="$GOPUS3SHAKE/reckoner-infra/local/docker"
+alias -g sinlddmp="$GOPUS3SHAKE/reckoner-infra/local/docker/scripts/reckoner-dmp-api"
 alias -g scli="$GOPUS3SHAKE/reckoner-client-web"
 alias -g scol="$GOPUS3SHAKE/reckoner-collector"
 alias -g sag="$GOPUS3SHAKE/reckoner-aggregator"
 alias -g sdmp="$GOPUS3SHAKE/reckoner-dmp-api"
 alias -g smok="$GOPUS3SHAKE/mokuru-api"
+alias -g sweb="$GOPUS3SHAKE/reckoner-web-api"
 
 # Git
 #---------------------------------------------------------------------
@@ -141,10 +147,10 @@ alias -g smaegari='--settings=settings.maegari_dev'
 
 # Go
 #-----------------------------------------------------
-alias gr="go run"
-alias gb="go build ."
-alias gt="go test"
-alias gc="goose create"
+alias glr="go run"
+alias glb="go build ."
+alias glt="go test"
+alias glc="goose create"
 
 # direnv
 #-----------------------------------------------------
@@ -163,7 +169,7 @@ alias elpl='elasticsearch-plugin'
 #-----------------------------------------------------
 alias flu='fluentd'
 
-alias -g tailkinesis="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-development-tracking-js | jq ."
+alias -g tailkinesis="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-dev-tracking-js | jq ."
 
 # docker-compose
 #-----------------------------------------------------
@@ -176,3 +182,32 @@ alias dcp="docker-compose ps"
 alias ncu="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/ncu"
 alias npm-check-updates="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/npm-check-updates/bin/npm-check-updates"
 alias create-react-app="$HOME/.anyenv/envs/nodenv/versions/7.8.0/lib/node_modules/create-react-app/index.js"
+
+
+# Gradle
+#-----------------------------------------------------
+alias grl="./gradlew"
+alias grlb="./gradlew build"
+
+
+# spark
+#-----------------------------------------------------
+alias sshell="spark-shell"
+alias ssub="spark-shell"
+alias -g ML="--master local"
+
+
+# sbt
+#-----------------------------------------------------
+alias sbtp="sbt package"
+alias sbtc="sbt compile"
+alias sbtr="sbt run"
+
+
+# option
+#-----------------------------------------------------
+alias gentime="export START=`echo "$(date -v -30H +%s)"` && export END=`echo "$(date -v -1M +%s)"`"
+
+# msyql
+#-----------------------------------------------------
+alias mysqlst="mysql.server start"
