@@ -58,6 +58,10 @@ call s:load_file('syntax')
 call s:load_file('color')
 call s:load_file('plugin/autopep8')
 
+if dein#tap('auto-ctags.vim')
+  call s:load_file('plugin/auto-ctags')
+endif
+
 if dein#tap('ctrlp.vim')
   call s:load_file('plugin/ctrlp')
 endif
@@ -120,4 +124,7 @@ if dein#tap('vim-jsx')
 endif
 if dein#tap('vim-surround')
   call s:load_file('plugin/vim-surround')
+endif
+if dein#tap('vim-tags')
+  call s:load_file('plugin/vim-tags')
 endif

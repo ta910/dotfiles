@@ -49,6 +49,7 @@ set statusline=2        "ステータルラインの表示
 set synmaxcol=1200       "一行でハイライトする文字数
 " yank use system clipboard
 set clipboard=unnamed
+set tags=./tags;
 
 set imdisable
 " スワップファイルファイルの設定(Readonly)

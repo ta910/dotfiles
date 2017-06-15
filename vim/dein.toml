@@ -17,6 +17,9 @@ hook_post_update = '''
 
 # Editing
 #-----------------------------------------------------
+[[plugins]]
+repo = "soramugi/auto-ctags.vim"
+
 [[plugins]] # text objects for indented blocks of lines
 repo    = 'kana/vim-textobj-indent'
 depends = ['vim-textobj-user']
