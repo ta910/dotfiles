@@ -14,6 +14,10 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export GOPATH=/Users/locona/gopus
 export PATH=$PATH:$GOPATH/bin
+export MAVEN_OPTS="-Xmx4096m"
+# export SBT_OPTS="-Xms2048m -Xmx2048m -XX:ReservedCodeCacheSize=512m -XX:MaxMetaspaceSize=1024m"
+export SBT_OPTS="-Xmx3G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss12M"
+
 
 # elastic
 #-----------------------------
