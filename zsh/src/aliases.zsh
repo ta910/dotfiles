@@ -61,6 +61,9 @@ alias -g crea="$GITHUB/creasty/"
 alias -g lo="$LOCONA"
 alias -g ura="$LOCONA/mygrad_urashima"
 
+### tools
+alias toolsweb="$HOME/.tools/3-shake/reckoner-web-api"
+
 ### gist
 GIST="$LOCONA/gist"
 alias -g gist="$GIST"
@@ -211,3 +214,9 @@ alias gentime="export START=`echo "$(date -v -30H +%s)"` && export END=`echo "$(
 # msyql
 #-----------------------------------------------------
 alias mysqlst="mysql.server start"
+
+
+
+# ginkgo
+#-----------------------------------------------------
+alias gink="ginkgo -p"
