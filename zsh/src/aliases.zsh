@@ -49,6 +49,7 @@ alias pst='pstree'
 GITHUB="$HOME/w/github.com"
 LOCONA="$GITHUB/locona"
 CREDITENGINE="$GITHUB/creditengine"
+SHAKE="$GITHUB/3-shake"
 alias -g ho="$HOME"
 alias -g zdir="$HOME/.zsh/src"
 alias -g pylib="$HOME/.anyenv/envs/pyenv/versions/3.5.2/lib/python3.5/site-packages"
@@ -98,11 +99,21 @@ alias -g xm="/Applications/XMTrading.app/drive_c/Program Files/XMTrading MT4/MQL
 alias -g ce="$CREDITENGINE/CE_app"
 alias -g lendy="$CREDITENGINE/lendy"
 alias -g sn="$CREDITENGINE/snoopy"
+alias -g sfront="$SHAKE/reckoner-frontend"
 
 # go working space
 #----------------------------------------------------------
+GOPUSGITHUB="$HOME/gopus/src/github.com"
 GOPUSLOCONA="$HOME/gopus/src/github.com/locona"
 GOPUS3SHAKE="$HOME/gopus/src/github.com/3-shake"
+### oss library
+#======
+alias goawssdk=$GOPUSGITHUB/aws/aws-sdk-go
+alias goazure=$GOPUSGITHUB/Azure/azure-sdk-for-go
+alias gopager=$GOPUSGITHUB/PagerDuty/go-pagerduty
+alias goatlas=$GOPUSGITHUB/hashicorp/atlas-go
+
+#====
 alias -g gopus="$HOME/gopus"
 alias -g glo="$GOPUSLOCONA"
 alias -g spur="$GOPUSLOCONA/spur"
@@ -110,6 +121,7 @@ alias -g gocha="$GOPUSLOCONA/gocha"
 alias -g gabula="$GOPUSLOCONA/gabula"
 alias -g ganesha="$GOPUSLOCONA/ganesha"
 alias -g ginsp="$GOPUSLOCONA/gin-spatium"
+alias -g gotest="$GOPUSLOCONA/ganesha/test"
 
 #-----------------------------------------------------
 alias -g shake="$GOPUS3SHAKE"
@@ -121,6 +133,7 @@ alias -g sinlddmp="$GOPUS3SHAKE/reckoner-infra/local/docker/scripts/reckoner-dmp
 alias -g scli="$GOPUS3SHAKE/reckoner-client-web"
 alias -g scol="$GOPUS3SHAKE/reckoner-collector"
 alias -g sag="$GOPUS3SHAKE/reckoner-aggregator"
+alias -g slog="$GOPUS3SHAKE/reckoner-loginsight-aggr"
 alias -g sdmp="$GOPUS3SHAKE/reckoner-dmp-api"
 alias -g smok="$GOPUS3SHAKE/mokuru-api"
 alias -g sweb="$GOPUS3SHAKE/reckoner-web-api"
