@@ -186,6 +186,7 @@ alias elpl='elasticsearch-plugin'
 alias flu='fluentd'
 
 alias -g tailkinesis="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-dev-tracking-js | jq ."
+alias -g tailkinesislog="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-tailf -stream reckoner-dev-logging-agent | jq ."
 
 # docker-compose
 #-----------------------------------------------------
