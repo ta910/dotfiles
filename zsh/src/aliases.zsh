@@ -137,6 +137,8 @@ alias -g slog="$GOPUS3SHAKE/reckoner-loginsight-aggr"
 alias -g sdmp="$GOPUS3SHAKE/reckoner-dmp-api"
 alias -g smok="$GOPUS3SHAKE/mokuru-api"
 alias -g sweb="$GOPUS3SHAKE/reckoner-web-api"
+alias -g spresto="$GOPUS3SHAKE/reckoner-presto"
+alias -g swor="$GOPUS3SHAKE/reckoner-worker"
 
 # Git
 #---------------------------------------------------------------------
