@@ -58,10 +58,6 @@ repo = 'tpope/vim-repeat'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-[[plugins]] # ctags generator
-repo = 'szw/vim-tags'
-
-
 # [[plugins]]
 # repo = 'cocopon/vaffle.vim'
 # repo = 'justinmk/vim-dirvish'
@@ -80,9 +76,6 @@ repo = 'tpope/vim-unimpaired'
 
 [[plugins]] # create your own submodes
 repo = 'kana/vim-submode'
-
-[[plugins]] # ctags generator
-repo = 'szw/vim-tags'
 
 [[plugins]]
 repo = 'christoomey/vim-tmux-navigator'
