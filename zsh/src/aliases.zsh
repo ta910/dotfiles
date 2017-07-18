@@ -6,6 +6,7 @@ alias vi="mvim -g"
 alias ali='vim $HOME/.zsh/src/aliases.zsh'
 alias exp='vim $HOME/.zsh/src/exports.zsh'
 
+alias hist="history"
 alias mv="mv -i"
 alias rm="rm -i"
 alias cp='cp -i'
@@ -61,6 +62,8 @@ alias -g crea="$GITHUB/creasty/"
 #---------------------------------------------------------------------
 alias -g lo="$LOCONA"
 alias -g ura="$LOCONA/mygrad_urashima"
+alias -g allu="$LOCONA/alluxio"
+alias -g kaf="$LOCONA/kafka"
 
 ### tools
 alias toolsweb="$HOME/.tools/3-shake/reckoner-web-api"
@@ -231,8 +234,4 @@ alias gentime="export START=`echo "$(date -v -30H +%s)"` && export END=`echo "$(
 #-----------------------------------------------------
 alias mysqlst="mysql.server start"
 
-
-
-# ginkgo
-#-----------------------------------------------------
-alias gink="ginkgo -p"
+# mysql -u root reckoner -N -e 'show tables' | grep "archive"| while read table; do mysql -u root -e "drop table $table" reckoner; done
