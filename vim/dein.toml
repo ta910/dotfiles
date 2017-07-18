@@ -34,8 +34,8 @@ depends = ['vim-textobj-user']
 [[plugins]] # adds text-objects for word-based columns
 repo = 'coderifous/textobj-word-column.vim'
 
-[[plugins]] # f/t motions to highlight all possible choices
-repo = 'Lokaltog/vim-easymotion'
+# [[plugins]] # f/t motions to highlight all possible choices
+# repo = 'Lokaltog/vim-easymotion'
 
 [[plugins]] # commenting code
 repo = 'scrooloose/nerdcommenter'
@@ -62,11 +62,11 @@ repo = 'tpope/vim-fugitive'
 # repo = 'cocopon/vaffle.vim'
 # repo = 'justinmk/vim-dirvish'
 
-[[plugins]]
-repo = 'tpope/vim-eunuch'
-
-[[plugins]]
-repo = 'tpope/vim-unimpaired'
+# [[plugins]]
+# repo = 'tpope/vim-eunuch'
+#
+# [[plugins]]
+# repo = 'tpope/vim-unimpaired'
 
 # [[plugins]] # pseudo clipboard register
 # repo = 'kana/vim-fakeclip'
