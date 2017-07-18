@@ -95,9 +95,6 @@ endif
 if dein#tap('result')
   call s:load_file('plugin/result')
 endif
-if dein#tap('syntastic')
-  call s:load_file('plugin/syntastic')
-endif
 if dein#tap('unite')
   call s:load_file('plugin/unite')
 endif
