@@ -1,45 +1,77 @@
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-brew 'cscope'
-brew 'direnv'
-brew 'elasticsearch'
-brew 'openssl'
-brew 'jpeg'
-brew 'libpng'
-brew 'libtiff'
-brew 'wxmac'
-brew 'erlang'
-brew 'gdbm'
-brew 'go'
-brew 'glide'
-brew 'gnu-sed'
-brew 'libyaml'
-brew 'logstash'
-brew 'lua'
-brew 'mas'
-brew 'readline'
-brew 'sqlite'
-brew 'python'
-brew 'mercurial'
-brew 'pcre'
-brew 'perl'
-brew 'pstree'
-brew 'rabbitmq'
-brew 'ruby'
-brew 'xz'
-brew 'the_silver_searcher'
-brew 'vim', args: ['with-lua']
-brew 'zsh'
-cask 'shiftit'
-mas 'Display Menu', id: 549083868
-mas 'Keynote', id: 409183694
-mas 'LINE', id: 539883307
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
-mas 'Paste', id: 967805235
-mas 'PG Commander', id: 669475285
-mas 'PopHub', id: 928494006
-mas 'Skitch', id: 425955336
-mas 'Slack', id: 803453959
-mas 'Xcode', id: 497799835
+tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/versions"
+tap "neovim/neovim"
+tap "paulp/extras"
+tap "rogual/neovim-dot-app"
+brew "python"
+brew "ansible"
+brew "apache-spark"
+brew "awscli"
+brew "bazel"
+brew "ccat"
+brew "chromedriver"
+brew "cmake"
+brew "ctags"
+brew "direnv"
+brew "elasticsearch", restart_service: true
+brew "ghostscript"
+brew "git-lfs"
+brew "glide"
+brew "gnu-sed"
+brew "gradle"
+brew "influxdb", restart_service: true
+brew "jq"
+brew "logstash"
+brew "lua"
+brew "mas"
+brew "maven"
+brew "mercurial"
+brew "mysql"
+brew "neovim", args: ["HEAD"]
+brew "nginx"
+brew "nodenv"
+brew "openssh"
+brew "pdftohtml"
+brew "phantomjs"
+brew "protobuf@2.5"
+brew "pstree"
+brew "rabbitmq"
+brew "redis", restart_service: true
+brew "repl"
+brew "rlwrap"
+brew "sbt"
+brew "scala"
+brew "snappy"
+brew "snzip"
+brew "ssh-copy-id"
+brew "the_silver_searcher"
+brew "tree"
+brew "vim", args: ["with-lua"]
+brew "wget"
+brew "yarn"
+brew "zsh"
+brew "rogual/neovim-dot-app/neovim-dot-app", args: ["HEAD"]
+cask "shiftit"
+cask "vagrant"
+cask "vagrant-manager"
+cask "virtualbox"
+cask "wkhtmltopdf"
+mas "1Password", id: 443987910
+mas "Bear", id: 1091189122
+mas "Display Menu", id: 549083868
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "MARKETSPEED", id: 946680495
+mas "Microsoft Remote Desktop", id: 715768417
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paste", id: 967805235
+mas "PG Commander", id: 669475285
+mas "Pixelmator", id: 407963104
+mas "PopHub", id: 928494006
+mas "Skitch", id: 425955336
+mas "Slack", id: 803453959
+mas "Xcode", id: 497799835
