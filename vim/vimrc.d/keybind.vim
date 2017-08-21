@@ -43,6 +43,7 @@ inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-y> <nop>
+" vnoremap <silent> p "0p
 "----------- auto brackets ----------
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 

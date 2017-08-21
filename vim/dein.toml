@@ -106,8 +106,9 @@ repo = 'Yggdroot/indentLine'
 
 #  Language
 #-----------------------------------------------
-[[plugins]] # React JSX syntax highlighting and indenting
-repo = 'mxw/vim-jsx'
-
 [[plugins]]
 repo = 'mattn/benchvimrc-vim'
+
+[[plugins]] # extra plugin for golang
+repo  = 'fatih/vim-go'
+on_ft = ['go']

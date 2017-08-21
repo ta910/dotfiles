@@ -29,7 +29,6 @@ set ambiwidth=double
 set showmatch           " 括弧入力時の対応する括弧を表示
 set matchtime=1         " カーソルが飛ぶ時間 0.1秒
 set ruler               " カーソルの位置表示
-set clipboard=unnamed,autoselect
 set backspace=indent,eol,start "バックスペース使用可能
 set nowrap              "折り返ししない
 set virtualedit=block
@@ -48,8 +47,12 @@ set re=0                "軽くなるらしい
 set statusline=2        "ステータルラインの表示
 set synmaxcol=1200       "一行でハイライトする文字数
 " yank use system clipboard
+" set clipboard=unnamed,autoselect
 set clipboard=unnamed
 set tags=./tags;
+set visualbell
+set visualbell t_vb=
+set noerrorbells
 
 set imdisable
 " スワップファイルファイルの設定(Readonly)
@@ -65,6 +68,3 @@ autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! cd %:p:h | endif
 if exists('+autochdir')
   set autochdir
 endif
-set visualbell
-set visualbell t_vb=
-set noerrorbells

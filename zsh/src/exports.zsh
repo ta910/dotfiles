@@ -1,7 +1,9 @@
 export EDITOR=vim
 export TERM=xterm-256color
-export TWILIO_ACCOUNT_SID="dummy"
-export TWILIO_AUTH_TOKEN="dummy"
+
+export HADOOP_HOME=/usr/local/Cellar/hadoop/2.8.0
+export HIVE_HOME=/usr/local/Cellar/hive/2.1.1
+export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$HADOOP_HOME/libexec/share/hadoop/tools/lib/*
 
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=100000
@@ -14,10 +16,13 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export GOPATH=/Users/locona/gopus
 export PATH=$PATH:$GOPATH/bin
-export MAVEN_OPTS="-Xmx4096m"
-# export SBT_OPTS="-Xms2048m -Xmx2048m -XX:ReservedCodeCacheSize=512m -XX:MaxMetaspaceSize=1024m"
-export SBT_OPTS="-Xmx3G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss12M"
+export PATH=$PATH:$HOME/w/github.com/locona/kafka/kafka/bin
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HIVE_HOME/bin
+# export MAVEN_OPTS="-Xmx4096m"
+export SBT_OPTS="-Xms1024M -Xmx1024M -XX:+CMSClassUnloadingEnabled"
 
+export NODE_ENV=development
 
 # elastic
 #-----------------------------

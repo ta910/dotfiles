@@ -1,5 +1,4 @@
 #!/bin/sh
-# sed -e
 
 function create_symlink() {
   if [ -d $HOME/.zsh/src ]; then
@@ -7,6 +6,27 @@ function create_symlink() {
   else
     mkdir -p $HOME/.zsh/src
     ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/*.zsh $HOME/.zsh/src/
+  fi
+
+  if [ -d $HOME/.zsh/src/aliases ]; then
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/*.zsh $HOME/.zsh/src/aliases
+  else
+    mkdir -p $HOME/.zsh/src/aliases
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/*.zsh $HOME/.zsh/src/aliases
+  fi
+
+  if [ -d $HOME/.zsh/src/aliases/commands ]; then
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/commands/*.zsh $HOME/.zsh/src/aliases/commands
+  else
+    mkdir -p $HOME/.zsh/src/aliases/commands
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/commands/*.zsh $HOME/.zsh/src/aliases/commands
+  fi
+
+  if [ -d $HOME/.zsh/src/aliases/directories ]; then
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/directories/*.zsh $HOME/.zsh/src/aliases/directories
+  else
+    mkdir -p $HOME/.zsh/src/aliases/directories
+    ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/directories/*.zsh $HOME/.zsh/src/aliases/directories
   fi
 
   [ -e $HOME/.zshrc ] || ln -s $HOME/w/github.com/locona/dotfiles/zsh/zshrc $HOME/.zshrc

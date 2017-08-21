@@ -48,8 +48,6 @@ if dein#check_install()
   call dein#install()
 endif
 
-
-
 "=== Load
 "=====================================================================
 call s:load_file('basic')
@@ -118,6 +116,9 @@ if dein#tap('vim-json')
 endif
 if dein#tap('vim-jsx')
   call s:load_file('plugin/vim-jsx')
+endif
+if dein#tap('vim-jsx-pretty')
+  call s:load_file('plugin/vim-jsx-pretty')
 endif
 if dein#tap('vim-surround')
   call s:load_file('plugin/vim-surround')
