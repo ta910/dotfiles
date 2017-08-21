@@ -1,0 +1,45 @@
+[core]
+	excludesfile = /Users/locona/.gitignore_global
+  editor = vim -c \"set fenc=utf-8\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = locona
+	email = locona.0810@gmail.com
+[marge]
+  tool = vimdiff
+  ff = false
+[diff]
+  tool = vimdiff
+  algorithm = histogram
+[alias]
+  delete-merged-branch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master|maegari'|xargs git branch -d; };f"
+  remote-add = remote add origin
+  a = add -p
+  b = branch
+  br = branch -r
+  c = checkout
+  cb = checkout -b
+  cm = commit -m
+  f = fetch
+  l = log --graph --decorate --all --oneline
+  s = status
+  ss = status -s
+  sh = show
+  st = stash
+  sta = stash apply
+  p = pull
+  ps = push
+[color]
+  ui = true
+[commit]
+	template = /Users/locona/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
