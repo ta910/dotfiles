@@ -33,7 +33,7 @@ alias cat='ccat'
 
 # vim
 #---------------------------------
-alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias mvim="/usr/local/Cellar/macvim/8.0-136/MacVim.app/Contents/bin/mvim"
 alias vi="mvim -g"
 
 # gsed
