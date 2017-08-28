@@ -4,7 +4,9 @@
 ## excluding go repositories
 GITHUB="$HOME/w/github.com"
 SHAKE="$GITHUB/3-shake"
+alias shake="$SHAKE"
 alias sf="$SHAKE/reckoner-frontend"
+alias sad="$SHAKE/reckoner-admin-frontend"
 alias slog="$SHAKE/reckoner-loginsight-aggr"
 alias sag="$SHAKE/reckoner-aggregator"
 alias sin="$SHAKE/reckoner-infra"
@@ -15,7 +17,7 @@ alias sinlddmp="$SHAKE/reckoner-infra/local/docker/scripts/reckoner-dmp-api"
 ## Go Respositories
 #---------------------------------
 GOPUS3SHAKE="$HOME/gopus/src/github.com/3-shake"
-alias shake="$GOPUS3SHAKE"
+alias gshake="$GOPUS3SHAKE"
 alias sapi="$GOPUS3SHAKE/reckoner-api"
 alias scol="$GOPUS3SHAKE/reckoner-collector"
 alias sdmp="$GOPUS3SHAKE/reckoner-dmp-api"

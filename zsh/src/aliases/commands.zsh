@@ -62,4 +62,6 @@ alias -g tailkinesislog="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-ta
 alias dire='direnv edit .'
 alias dira='direnv allow'
 
+alias ci='circleci'
+
 # mysql -u root reckoner -N -e 'show tables' | grep "archive"| while read table; do mysql -u root -e "drop table $table" reckoner; done

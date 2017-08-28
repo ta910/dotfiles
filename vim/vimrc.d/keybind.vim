@@ -7,6 +7,7 @@ nnoremap <Space>r :source ~/.vimrc<Enter>
 nnoremap q: :q
 nnoremap <Space>: :q<Enter> "====== NORMAL + VISUAL
 map <C-c> <ESC>
+noremap <Space>1 <ESC>
 noremap <Space>h ^
 noremap <Space>l $
 noremap <Space>w :split<Enter>
@@ -30,7 +31,6 @@ noremap sp gt
 noremap sn gT
 noremap ; :
 noremap : ;
-
 
 "---------------change insert by ja----------------------
 imap <C-j> <CR>
