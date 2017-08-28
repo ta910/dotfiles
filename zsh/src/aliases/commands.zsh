@@ -33,7 +33,7 @@ alias cat='ccat'
 
 # vim
 #---------------------------------
-alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
+alias mvim="/usr/local/Cellar/macvim/8.0-136/MacVim.app/Contents/bin/mvim"
 alias vi="mvim -g"
 
 # gsed
@@ -61,5 +61,7 @@ alias -g tailkinesislog="$GOPUS3SHAKE/reckoner-kinesis-tailf/reckoner-kinesis-ta
 #-----------------------------------------------------
 alias dire='direnv edit .'
 alias dira='direnv allow'
+
+alias ci='circleci'
 
 # mysql -u root reckoner -N -e 'show tables' | grep "archive"| while read table; do mysql -u root -e "drop table $table" reckoner; done

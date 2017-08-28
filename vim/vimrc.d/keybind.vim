@@ -7,6 +7,7 @@ nnoremap <Space>r :source ~/.vimrc<Enter>
 nnoremap q: :q
 nnoremap <Space>: :q<Enter> "====== NORMAL + VISUAL
 map <C-c> <ESC>
+noremap <Space>1 <ESC>
 noremap <Space>h ^
 noremap <Space>l $
 noremap <Space>w :split<Enter>
@@ -28,6 +29,8 @@ noremap gk k
 noremap st :tabnew<CR>
 noremap sp gt
 noremap sn gT
+noremap ; :
+noremap : ;
 
 "---------------change insert by ja----------------------
 imap <C-j> <CR>
@@ -43,6 +46,12 @@ inoremap <C-o> <C-o>o
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-y> <nop>
+inoremap ; :
+inoremap : ;
+
+vnoremap ; :
+vnoremap : ;
+
 " vnoremap <silent> p "0p
 "----------- auto brackets ----------
 inoremap <ESC> <ESC>:set iminsert=0<CR>

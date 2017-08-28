@@ -64,7 +64,7 @@ zplug load
 
 # Direnv
 #-----------------------------------------------
-#eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 # Anyenv
 #-----------------------------------------------
