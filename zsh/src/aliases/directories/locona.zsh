@@ -9,14 +9,13 @@ alias -g lo="$LOCONA"
 ### dotfiles
 #---------------------------------
 DOTFILES=$LOCONA/dotfiles
-alias dot="$DOTFILES"
+alias dotf="$DOTFILES"
 alias dotvim="$DOTFILES/vim"
 alias dotvimd="$DOTFILES/vim/vimrc.d"
 alias dotplugin="$DOTFILES/vim/vimrc.d/plugin"
 alias dotzsh="$DOTFILES/zsh"
 alias dotvagrant="$DOTFILES/vagrant"
 alias dotneo="$DOTFILES/neovim"
-
 
 ### locona
 #---------------------------------
@@ -38,4 +37,10 @@ alias glo="$GOPUSLOCONA"
 alias spur="$GOPUSLOCONA/spur"
 alias gabula="$GOPUSLOCONA/gabula"
 alias ganesha="$GOPUSLOCONA/ganesha"
-alias gx="$GOPUSLOCONA/xio-api"
+alias gio="$GOPUSLOCONA/xio-api"
+alias sn="$GOPUSLOCONA/snoopy"
+alias appe="$GOPUSLOCONA/apperror"
+alias gtopbazz="$GOPUSLOCONA/topbazz-api"
+alias gabt="$GOPUSLOCONA/abbit"
+alias gclarch="$GOPUSLOCONA/clarch"
+alias gign="$GOPUSLOCONA/ignis"

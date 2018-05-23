@@ -20,6 +20,11 @@ zplug "peco/peco", as:command, from:gh-r
 zplug "themes/robbyrussell", from:oh-my-zsh
 zplug check || zplug install
 
+autoload -U colors; colors
+source $HOME/w/github.com/superbrothers/zsh-kubectl-prompt/kubectl.zsh
+RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
+
+
 # Zplug init
 #------------------------------------i
 if [[ ! -d ~/.zplug ]]; then
@@ -64,12 +69,27 @@ zplug load
 
 # Direnv
 #-----------------------------------------------
-#eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 # Anyenv
 #-----------------------------------------------
 if [ -d $HOME/.anyenv ]; then
  eval "$(anyenv init - zsh)"
 fi
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+# eval "$(pyenv init -)"
 
 #zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+

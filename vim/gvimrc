@@ -1,9 +1,9 @@
 set transparency=10
 " fonts
-set guifont=Monaco:h9
+set guifont=Monaco:h8
 
 " maximize window
-set lines=999 columns=9999
+set lines=600 columns=9999
 
 " reset guioption
 set guioptions&

@@ -1,24 +1,28 @@
 "=== Basic Setting
 " disable default plugins
-" let g:loaded_gzip              = 1
-" let g:loaded_tar               = 1
-" let g:loaded_tarPlugin         = 1
-" let g:loaded_zip               = 1
-" let g:loaded_zipPlugin         = 1
-" let g:loaded_rrhelper          = 1
-" let g:loaded_2html_plugin      = 1
-" let g:loaded_vimball           = 1
-" let g:loaded_vimballPlugin     = 1
-" let g:loaded_getscript         = 1
-" let g:loaded_getscriptPlugin   = 1
-" let g:loaded_LogiPat           = 1
-" let g:loaded_logipat           = 1
-" let g:loaded_tutor_mode_plugin = 1
-" let g:loaded_man               = 1
+let g:loaded_gzip              = 1
+let g:loaded_tar               = 1
+let g:loaded_tarPlugin         = 1
+let g:loaded_zip               = 1
+let g:loaded_zipPlugin         = 1
+let g:loaded_rrhelper          = 1
+let g:loaded_2html_plugin      = 1
+let g:loaded_vimball           = 1
+let g:loaded_vimballPlugin     = 1
+let g:loaded_getscript         = 1
+let g:loaded_getscriptPlugin   = 1
+let g:loaded_LogiPat           = 1
+let g:loaded_logipat           = 1
+let g:loaded_tutor_mode_plugin = 1
+let g:loaded_man               = 1
 
 " encoding
 set encoding=utf-8
 scriptencoding utf-8
+
+set nobackup
+set noswapfile
+set noundofile
 
 let mapleader = ","     " キーマップリーダー
 set number              " 行番号を表示
@@ -32,7 +36,6 @@ set ruler               " カーソルの位置表示
 set backspace=indent,eol,start "バックスペース使用可能
 set nowrap              "折り返ししない
 set virtualedit=block
-set noswapfile          "スワップファイル作らない
 
 set expandtab           "タブ入力を複数の空hバク入力に置き換える
 set smarttab            "新しい行を作った時に高度な自動インデントを行う

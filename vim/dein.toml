@@ -109,6 +109,3 @@ repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'mattn/benchvimrc-vim'
 
-[[plugins]] # extra plugin for golang
-repo  = 'fatih/vim-go'
-on_ft = ['go']

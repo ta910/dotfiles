@@ -5,6 +5,7 @@ function! s:vimrc_environment()
     \ 'dein':   l:vim_path . '/dein',
     \ 'dein_toml': l:vim_path . '/dein.toml',
     \ 'dein_lazy_toml': l:vim_path . '/dein_lazy.toml',
+    \ 'dein_repo': l:vim_path . '/dein/repos/github.com/Shougo/dein.vim',
     \ 'vimrcd': l:vim_path . '/vimrc.d',
     \}
   return l:env
@@ -31,8 +32,11 @@ filetype plugin indent on
 if &compatible
   set nocompatible               " Be iMproved
 endif
-" Required:
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+" set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+let &g:rtp .= ',' . g:env.path.dein_repo
+
 
 if dein#load_state(g:env.path.dein)
   call dein#begin(g:env.path.dein, [expand('<sfile>'), g:env.path.dein_toml, g:env.path.dein_lazy_toml])
@@ -56,9 +60,9 @@ call s:load_file('syntax')
 call s:load_file('color')
 call s:load_file('plugin/autopep8')
 
-if dein#tap('auto-ctags.vim')
-  call s:load_file('plugin/auto-ctags')
-endif
+" if dein#tap('auto-ctags.vim')
+  " call s:load_file('plugin/auto-ctags')
+" endif
 
 if dein#tap('ctrlp.vim')
   call s:load_file('plugin/ctrlp')
@@ -78,20 +82,14 @@ endif
 if dein#tap('lightline')
   call s:load_file('plugin/lightline')
 endif
-if dein#tap('neocomplete')
+ if dein#tap('neocomplete')
   call s:load_file('plugin/neocomplete')
-endif
-if dein#tap('nerdcommenter')
-  call s:load_file('plugin/nerdcommenter')
-endif
+ endif
+ if dein#tap('nerdcommenter')
+   call s:load_file('plugin/nerdcommenter')
+ endif
 if dein#tap('nerdtree')
   call s:load_file('plugin/nerdtree')
-endif
-if dein#tap('regex.py')
-  call s:load_file('plugin/regex.py')
-endif
-if dein#tap('result')
-  call s:load_file('plugin/result')
 endif
 if dein#tap('unite')
   call s:load_file('plugin/unite')

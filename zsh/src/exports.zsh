@@ -12,6 +12,7 @@ export SAVEHIST=100000
 export PATH=$PATH:/usr/local/sbin
 export PATH="$HOME/.anyenv/bin:$PATH"
 
+export PATH=$HOME/.rbenv/shims/bin:$PATH
 export LSCOLORS=exfxcxdxbxegedabagacad
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 export GOPATH=/Users/locona/gopus
@@ -19,8 +20,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/w/github.com/locona/kafka/kafka/bin
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HIVE_HOME/bin
+export PATH=$HOME/.zsh/src/go_appengine:$PATH
 # export MAVEN_OPTS="-Xmx4096m"
-export SBT_OPTS="-Xms1024M -Xmx1024M -XX:+CMSClassUnloadingEnabled"
+export SBT_OPTS="-Xms4096M -Xmx4096M -XX:+CMSClassUnloadingEnabled"
 
 export NODE_ENV=development
 
@@ -32,3 +34,9 @@ export ELASTICPATH=/usr/local/Cellar/elasticsearch/5.3.2/bin
 # export ES_JAVA_OPTS=-Xms8g -Xmx8g
 
 source $HOME/.zsh/src/confidentials.zsh
+export SSH_KEY=$(cat ~/.ssh/conf.d/keys/id_rsa)
+
+
+# KUBE
+export KUBE_CONTEXT=$(kubectl config current-context)
+export KUBE_NAMESPACE_IGNIS=ignis

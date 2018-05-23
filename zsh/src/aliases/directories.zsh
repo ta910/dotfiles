@@ -16,6 +16,5 @@ alias -g gopus="$HOME/gopus"
 alias -g zdir="$HOME/.zsh/src"
 
 GITHUB="$HOME/w/github.com"
-alias -g gi="$GITHUB"
 alias -g crea="$GITHUB/creasty/"
 
