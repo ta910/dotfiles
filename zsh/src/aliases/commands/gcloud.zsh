@@ -31,5 +31,7 @@ alias gc-container-clouster-get-credentials="gcloud container clusters get-crede
 ## compute
 alias gc-compute-instances-list="gcloud compute instances list"
 alias gc-compute-ssh="gcloud compute ssh" # <NODE>
+alias gc-compute-instances-start='gcloud compute instances start' # instance name
+alias gc-compute-instances-stop='gcloud compute instances start'
 
 export GCP_PROJECT_ID="$(gcloud config get-value project)"
