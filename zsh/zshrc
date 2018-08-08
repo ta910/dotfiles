@@ -5,8 +5,7 @@ export ZPLUG_HOME=$HOME/.zplug
 zmodload -i zsh/parameter
 zmodload -i zsh/mathfunc
 zmodload -i zsh/complist
-# autoload -Uz +X compinit && compinit
-# autoload -Uz +X promptinit && promptinit
+autoload -Uz +X promptinit && promptinit
 # autoload -U +X bashcompinit && bashcompinit
 
 source ~/.zplug/init.zsh
@@ -17,7 +16,7 @@ source ~/.zplug/init.zsh
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions', lazy:true
 zplug "zsh-users/zsh-history-substring-search"
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "mollifier/anyframe"
 zplug "peco/peco", as:command, from:gh-r
 zplug "themes/robbyrussell", from:oh-my-zsh, lazy:true
@@ -86,7 +85,6 @@ setopt prompt_subst
 #################    bindkey       ################
 ###################################################
 # zstyle ":anyframe:selector:" use peco
-zle -N anyframe-widget-execute-history
 bindkey '^r' anyframe-widget-execute-history
 # bindkey '^xb' anyframe-widget-cdr
 # bindkey '^x^b' anyframe-widget-checkout-git-branch
@@ -95,17 +93,13 @@ bindkey '^r' anyframe-widget-execute-history
 # bindkey '^xk' anyframe-widget-kill
 # bindkey '^xe' anyframe-widget-insert-git-branch
 
-# for file in ~/.zsh/src/{exports,aliases,confidentials}.zsh; do
-  # [ -r "$file" ] && [ -f "$file" ] && source "$file"
-# done
-# unset file
-
 ###################################################
 #############    source external files   ##########
 ###################################################
 for file in ~/.zsh/src/confidentials.zsh; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+unset file
 
 ###################################################
 ##############       diectories      ##############
@@ -370,6 +364,14 @@ alias gc-compute-instances-start='gcloud compute instances start' # instance nam
 alias gc-compute-instances-stop='gcloud compute instances start'
 
 #-----------------------------------------------------
+# helm
+#-----------------------------------------------------
+if [ $commands[helm] ]; then
+  source <(helm completion zsh)
+fi
+
+
+#-----------------------------------------------------
 # go
 #-----------------------------------------------------
 alias gi="go install"
@@ -380,14 +382,7 @@ alias glt="go test"
 #-----------------------------------------------------
 # kubectl
 #-----------------------------------------------------
-function kubectl() {
-    if ! type __start_kubectl >/dev/null 2>&1; then
-        source <(command kubectl completion zsh)
-    fi
-
-    command kubectl "$@"
-}
-
+# source $HOME/.zsh/src/kubectl.zsh
 alias k='kubectl'
 alias ka='kubectl attach'
 alias kp='kubectl get po'
@@ -421,20 +416,7 @@ alias k-namespace-current="kubectl config view | grep namespace"
 # eval "$(rbenv init -)"
 # eval "$(nodenv init -)"
 # eval "$(pyenv init -)"
-
-#zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-# if command -v pyenv 1>/dev/null 2>&1; then
-  # eval "$(pyenv init -)"
-# fi
-
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
-
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#
 if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
+
