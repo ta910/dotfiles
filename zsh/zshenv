@@ -1,23 +1,25 @@
+zmodload zsh/zprof && zprof
 # before
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Load
-#-----------------------------------------------
-for file in ~/.zsh/src/{exports,aliases}.zsh; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
-
-
-#  Anyenv
-#-----------------------------------------------
-if [ -d $HOME/.anyenv ]; then
-  eval "$(anyenv init - zsh)"
-fi
 
 export PYENV_ROOT="$HOME/.pyenv"
+export EDITOR=vim
+export TERM=xterm-256color
+
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export GOPATH=/Users/locona/gopus
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/.rbenv/shims/bin
+export PATH=$PATH:$GOPATH/bin
 export PATH="$PYENV_ROOT/bin:$PATH"
+# export MAVEN_OPTS="-Xmx4096m"
+export SBT_OPTS="-Xms4096M -Xmx4096M -XX:+CMSClassUnloadingEnabled"
+
+export NODE_ENV=development
+
+export SSH_KEY=$(cat ~/.ssh/conf.d/keys/id_rsa)

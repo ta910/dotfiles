@@ -1,29 +1,37 @@
 # 補完
 bindkey -e # ターミナル上でのkeybind
+export ZPLUG_HOME=$HOME/.zplug
+
+zmodload -i zsh/parameter
 zmodload -i zsh/mathfunc
 zmodload -i zsh/complist
-export ZPLUG_HOME=$HOME/.zplug
-autoload -Uz compinit; compinit
-autoload -U promptinit; promptinit
-autoload -Uz colors; colors
+# autoload -Uz +X compinit && compinit
+# autoload -Uz +X promptinit && promptinit
+# autoload -U +X bashcompinit && bashcompinit
 
 source ~/.zplug/init.zsh
-zplug "b4b4r07/enhancd", use:init.sh zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-completions'
+# zplug "b4b4r07/enhancd", use:init.sh
+# zplug "mollifier/cd-gitroot"
+# zplug 'mafredri/zsh-async', from:github
+# zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions', lazy:true
 zplug "zsh-users/zsh-history-substring-search"
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug "mollifier/anyframe"
-zplug "mollifier/cd-gitroot"
 zplug "peco/peco", as:command, from:gh-r
-# zplug 'mafredri/zsh-async', from:github
-# zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
-zplug "themes/robbyrussell", from:oh-my-zsh
-zplug check || zplug install
+zplug "themes/robbyrussell", from:oh-my-zsh, lazy:true
+zplug "superbrothers/zsh-kubectl-prompt", use:kubectl.zsh
 
-autoload -U colors; colors
-source $HOME/w/github.com/superbrothers/zsh-kubectl-prompt/kubectl.zsh
+if [[ $ZPLUG_LOADFILE -nt $ZPLUG_CACHE_DIR/interface || ! -f $ZPLUG_CACHE_DIR/interface ]]; then
+   zplug check || zplug install
+fi
+
 RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Zplug init
 #------------------------------------i
@@ -31,59 +39,393 @@ if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
     source ~/.zplug/init.zsh && zplug update --self
 fi
+if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
+   zcompile ~/.zshrc
+fi
+zplug load
 
+# The next line enables shell command completion for gcloud.
+# if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then
+if [ $commands[gcloud] ]; then
+  gcloud() {
+    # Remove this function, subsequent calls will execute 'kubectl' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    echo $0
+    echo "$@"
+    source '/Users/locona/google-cloud-sdk/completion.zsh.inc'
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+
+  }
+fi
+
+
+###################################################
+#################    setopt       #################
+###################################################
 setopt share_history # History共有
 setopt extended_history # 開始と終了を記録
 setopt hist_ignore_dups # 直前と同じコマンドの場合は履歴に追加しない
 setopt hist_ignore_all_dups # 重複するコマンドは古い法を削除する
 setopt hist_verify
-
 setopt no_beep # beepを無効にする
 setopt auto_cd # ディレクトリ名だけでcdする
 setopt auto_pushd # cdしたら自動的にpushdする
 setopt auto_menu
 setopt auto_param_keys
 setopt always_to_end
-
 setopt complete_in_word
 setopt mark_dirs
 setopt menu_complete
 setopt prompt_subst
 
-
+###################################################
+#################    bindkey       ################
+###################################################
 # zstyle ":anyframe:selector:" use peco
-bindkey '^xb' anyframe-widget-cdr
-bindkey '^x^b' anyframe-widget-checkout-git-branch
-
+zle -N anyframe-widget-execute-history
 bindkey '^r' anyframe-widget-execute-history
+# bindkey '^xb' anyframe-widget-cdr
+# bindkey '^x^b' anyframe-widget-checkout-git-branch
+# bindkey '^xi' anyframe-widget-put-history
+# bindkey '^xg' anyframe-widget-cd-ghq-repository
+# bindkey '^xk' anyframe-widget-kill
+# bindkey '^xe' anyframe-widget-insert-git-branch
 
-bindkey '^xi' anyframe-widget-put-history
+# for file in ~/.zsh/src/{exports,aliases,confidentials}.zsh; do
+  # [ -r "$file" ] && [ -f "$file" ] && source "$file"
+# done
+# unset file
 
-bindkey '^xg' anyframe-widget-cd-ghq-repository
+###################################################
+#############    source external files   ##########
+###################################################
+for file in ~/.zsh/src/confidentials.zsh; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
 
-bindkey '^xk' anyframe-widget-kill
+###################################################
+##############       diectories      ##############
+###################################################
+#-----------------------------------------------------
+# default
+#-----------------------------------------------------
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ho="$HOME"
+alias -g gopus="$HOME/gopus"
+alias -g zdir="$HOME/.zsh/src"
 
-bindkey '^xe' anyframe-widget-insert-git-branch
+#-----------------------------------------------------
+# locona
+#-----------------------------------------------------
+GITHUB="$HOME/w/github.com"
+LOCONA="$GITHUB/locona"
+alias -g lo="$LOCONA"
+### dotfiles
+DOTFILES=$LOCONA/dotfiles
+alias dotf="$DOTFILES"
+alias dotvim="$DOTFILES/vim"
+alias dotvimd="$DOTFILES/vim/vimrc.d"
+alias dotplugin="$DOTFILES/vim/vimrc.d/plugin"
+alias dotzsh="$DOTFILES/zsh"
+alias dotvagrant="$DOTFILES/vagrant"
+alias dotneo="$DOTFILES/neovim"
 
-zplug load
+### locona
+alias bell="$LOCONA/bellagio"
+alias cw="$LOCONA/crawler"
+alias es="$LOCONA/espeon"
+alias ex="$LOCONA/expressio"
+alias kaf="$LOCONA/kafka"
+alias mach="$LOCONA/machine-learning"
+alias nob="$LOCONA/noblesse"
+alias umb="$LOCONA/umbra"
+alias ven="$LOCONA/ventum"
+alias xio="$LOCONA/xio"
+
+## Go Respositories
+GOPUSLOCONA="$HOME/gopus/src/github.com/locona"
+alias glo="$GOPUSLOCONA"
+alias spur="$GOPUSLOCONA/spur"
+alias gabula="$GOPUSLOCONA/gabula"
+alias ganesha="$GOPUSLOCONA/ganesha"
+alias gio="$GOPUSLOCONA/xio-api"
+alias sn="$GOPUSLOCONA/snoopy"
+alias appe="$GOPUSLOCONA/apperror"
+alias gtopbazz="$GOPUSLOCONA/topbazz-api"
+alias gabt="$GOPUSLOCONA/abbit"
+alias gclarch="$GOPUSLOCONA/clarch"
+alias gign="$GOPUSLOCONA/ignis"
+unset GITHUB
+unset LOCONA
+unset DOTFILES
+unset GOPUSLOCONA
+
+#-----------------------------------------------------
+# 3-shake
+#-----------------------------------------------------
+## excluding go repositories
+GITHUB="$HOME/w/github.com"
+SHAKE="$GITHUB/3-shake"
+alias shake="$SHAKE"
+alias sf="$SHAKE/reckoner-frontend"
+alias cdpfront="$SHAKE/reckoner-cdp-frontend"
+alias sft="$SHAKE/reckoner-tmp-frontend"
+alias sad="$SHAKE/reckoner-admin-frontend"
+alias sadf="$SHAKE/reckoner-adn-admin-frontend"
+alias sadfr="$SHAKE/reckoner-adn-admin-frontend-review"
+alias slog="$SHAKE/reckoner-loginsight-aggr"
+alias sfmg="$SHAKE/reckoner-fmg"
+alias sag="$SHAKE/reckoner-aggregator"
+alias sjs="$SHAKE/reckoner-cdp-js-sdk"
+alias sios="$SHAKE/reckoner-ios-sdk"
+alias sissue="$SHAKE/reckoner-issue"
+alias ssbt="$SHAKE/sbt"
+alias slam="$SHAKE/reckoner-lambda"
+alias sim="$SHAKE/docker-base-images"
+alias sinld="$SHAKE/reckoner-infra/local/docker"
+alias sadin="$SHAKE/reckoner-adn-infra"
+alias sadinld="$SHAKE/reckoner-adn-infra/docker/local"
+alias sdoc="$SHAKE/reckoner-document"
+alias sorc="$SHAKE/reckoner-orc"
+alias cdpink8s="$SHAKE/reckoner-infra-k8s/cdp"
+
+## Go Respositories
+#---------------------------------
+GOPUS3SHAKE="$HOME/gopus/src/github.com/3-shake"
+alias gshake="$GOPUS3SHAKE"
+alias scol="$GOPUS3SHAKE/reckoner-collector"
+alias sdmp="$GOPUS3SHAKE/reckoner-dmp-api"
+alias sweb="$GOPUS3SHAKE/reckoner-web-api"
+alias spresto="$GOPUS3SHAKE/reckoner-presto"
+alias swor="$GOPUS3SHAKE/reckoner-worker"
+alias sudm="$GOPUS3SHAKE/reckoner-udm"
+alias sadapi="$GOPUS3SHAKE/reckoner-adn-admin-api"
+alias sadserver="$GOPUS3SHAKE/reckoner-adn-server"
+alias sadbatch="$GOPUS3SHAKE/reckoner-adn-batch"
+alias hivego="$GOPUS3SHAKE/hive-go"
+alias cdp="$GOPUS3SHAKE/reckoner-cdp"
+alias cdpre="$GOPUS3SHAKE/reckoner-cdp-review"
+alias cdpserver="$GOPUS3SHAKE/reckoner-cdp/server"
+alias cdpbff="$GOPUS3SHAKE/reckoner-cdp/bff"
+alias cdpserverk8sfront="$GOPUS3SHAKE/reckoner-cdp/server/k8s/server-frontend"
+alias cdpserverk8spublic="$GOPUS3SHAKE/reckoner-cdp/server/k8s/server-public"
+alias cdpbatch="$GOPUS3SHAKE/reckoner-cdp/batch"
+alias cdppr="$GOPUS3SHAKE/reckoner-cdp/prlauncher"
+alias cdpio="$GOPUS3SHAKE/reckoner-cdp/io"
+alias cdpreceiverout="$GOPUS3SHAKE/reckoner-cdp/receiver/outputexec"
+alias cdpreceiverquery="$GOPUS3SHAKE/reckoner-cdp/receiver/queryexec"
+alias cdpin="$SHAKE/reckoner-infra/cdp"
+alias cdptracking="$GOPUS3SHAKE/reckoner-cdp/tracking"
+alias cdpindoc="$GOPUS3SHAKE/reckoner-cdp/infra/docker/compose"
+unset GITHUB
+unset SHAKE
+unset GOPUS3SHAKE
+
+###################################################
+##############       aliases      #################
+###################################################
+
+#-----------------------------------------------------
+# option
+#-----------------------------------------------------
+alias -g G='| grep'
+alias -g GE='| grep -e'
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g S='| sort'
+alias -g W='| wc'
+alias -g X='| xargs'
+alias -g XK='| xargs kill -9'
+
+#-----------------------------------------------------
+# default
+#-----------------------------------------------------
+## cmd
+alias hist="history"
+alias mv="mv -i"
+alias rm="rm -i" alias cp='cp -i'
+alias ps='ps aux'
+alias pst='pstree'
+alias w="watch"
+alias gs='gsed --in-place' # 's/target/converted/g' filepath
+alias gentime="export START=`echo "$(date -v -30H +%s)"` && export END=`echo "$(date -v -1M +%s)"`"
+
+## ls
+alias ls='ls -GF'
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
+
+# edit
+
+#-----------------------------------------------------
+# vim
+#-----------------------------------------------------
+alias vim="/usr/local/bin/vim"
+alias gvim="/usr/local/Cellar/macvim/8.0-146_1//MacVim.app/Contents/bin/gvim"
+alias vi="gvim -g"
+alias sshe="vim $HOME/.ssh/conf.d/hosts"
+
+#-----------------------------------------------------
+# yarn
+#-----------------------------------------------------
+alias ys='yarn start'
+alias yl='yarn lint'
+
+#-----------------------------------------------------
+# zsh
+#-----------------------------------------------------
+alias zsh-sync-aliases="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/*.zsh $HOME/.zsh/src/aliases"
+alias zsh-sync-dir="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/directories/*.zsh $HOME/.zsh/src/aliases/directories"
+alias zsh-sync-commands="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/commands/*.zsh $HOME/.zsh/src/aliases/commands"
+alias ali='vim $HOME/.zsh/src/aliases.zsh'
+alias expo='vim $HOME/.zsh/src/exports.zsh'
+
+#-----------------------------------------------------
+# jq
+#-----------------------------------------------------
+alias -g J='| jq .'
+alias -g JL='| jq length'
+
+#-----------------------------------------------------
+# git
+#-----------------------------------------------------
+alias g='git'
+
+#-----------------------------------------------------
+# docker
+#-----------------------------------------------------
+### docker run
+alias dr="docker run -i -t"
+alias dim="docker images"
+
+# docker-compose
+alias dcu="docker-compose up"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down -v"
+alias dcdv="docker-compose down -v"
+alias dcp="docker-compose ps"
+alias dcb="docker-compose build"
+alias dcf="docker-compose -f "
+
+## docker cli
+alias docker-run='docker run -it --rm'
+alias docker-exec='docker exec -it'
+alias docker-rm-exited='docker rm $(docker ps -a --filter 'status=exited' -q)'
+alias docker-rm-all='docker rm -v $(docker ps -aq)'
+alias docker-stop='docker stop $(docker ps -aq)'
+alias docker-rmi='docker rmi'
+alias docker-rmi-all='docker rmi -f $(docker images -aq)'
+alias docker-rmi-none='docker rmi $(docker images -f "dangling=true" -q)'
+alias docker-ps-all='docker ps -a'
+alias docker-volume-ls='docker volume ls'
+alias docker-volume-rm='docker volume rm $(docker volume ls -qf dangling=true)'
+alias docker-image-ls='docker image ls'
+alias docker-netork-ls='docker network ls'
+alias docker-compose-down='docker-compose down --volumes'
+
+#-----------------------------------------------------
+# gcloud
+#-----------------------------------------------------
+## auth
+alias gc-auth-login="gcloud auth application-default login"
+alias gc-auth-list="gcloud auth list"
+
+## conf
+alias gc-conf-list="gcloud config list"
+alias gc-conf-get-value-project="gcloud config get-value project"
+alias gc-conf-set-project="gcloud config set project" # arg; project-id
+alias gc-conf-set-account="gcloud config set account" # arg; gmail
+alias gc-conf-set-compute_zone="gcloud config set compute/zone" # https://cloud.google.com/compute/docs/regions-zones/regions-zones?hl=ja#available
+
+## project
+alias gc-projects-list="gcloud projects list"
+alias gc-projects-create="gcloud projects create" # project-id --name=
+alias gc-projects-delete="gcloud projects delete" # project-id
+
+function gc-projects-locona() {
+  gcloud config set project $GCP_ACCOUNT_LOCONA
+  gcloud config set project $GCP_PROJECT_LOCONA
+}
+
+## container
+alias gc-container-cluster-list="gcloud container clusters list"
+alias gc-container-cluster-create="gcloud container clusters create" # cluster name
+alias gc-container-cluster-delete="gcloud container clusters delete" # cluster name
+alias gc-container-cluster-resize="gcloud container clusters resize" # <cluster name> --size=<NUM>
+alias gc-container-clouster-get-credentials="gcloud container clusters get-credentials" # <cluster name>
+
+## compute
+alias gc-compute-instances-list="gcloud compute instances list"
+alias gc-compute-ssh="gcloud compute ssh" # <NODE>
+alias gc-compute-instances-start='gcloud compute instances start' # instance name
+alias gc-compute-instances-stop='gcloud compute instances start'
+
+#-----------------------------------------------------
+# go
+#-----------------------------------------------------
+alias gi="go install"
+alias glr="go run"
+alias glb="go build ."
+alias glt="go test"
+
+#-----------------------------------------------------
+# kubectl
+#-----------------------------------------------------
+function kubectl() {
+    if ! type __start_kubectl >/dev/null 2>&1; then
+        source <(command kubectl completion zsh)
+    fi
+
+    command kubectl "$@"
+}
+
+alias k='kubectl'
+alias ka='kubectl attach'
+alias kp='kubectl get po'
+alias kpw='kubectl get po -w'
+alias kpa='kubectl get po -a'
+alias kl='kubectl logs'
+alias kd='kubectl get deploy'
+alias ks='kubectl get svc'
+
+alias k-conf-current-context="kubectl config current-context"
+alias k-conf-view="kubectl config view"
+alias k-conf-use-context="kubectl config use-context"
+alias k-proxy="kubectl proxy"
+alias k-namespace-create="kubectl create namespace"
+alias k-namespace-list="kubectl get namespaces"
+alias k-namespace-delete="kubectl delete namespaces"
+alias k-namespace-set-ignis="kubectl config set-context ${KUBE_CONTEXT} --namespace=${KUBE_NAMESPACE_IGNIS}"
+alias k-namespace-set="kubectl config set-context ${KUBE_CONTEXT} --namespace "
+alias k-namespace-current="kubectl config view | grep namespace"
+#-----------------------------------------------------
+
 
 # Direnv
 #-----------------------------------------------
-eval "$(direnv hook zsh)"
-
+# eval "$(direnv hook zsh)"
 # Anyenv
 #-----------------------------------------------
-if [ -d $HOME/.anyenv ]; then
- eval "$(anyenv init - zsh)"
-fi
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
+# if [ -d $HOME/.anyenv ]; then
+ # eval "$(anyenv init - zsh)"
+# fi
+# eval "$(rbenv init -)"
+# eval "$(nodenv init -)"
 # eval "$(pyenv init -)"
 
 #zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+  # eval "$(pyenv init -)"
+# fi
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
@@ -91,5 +433,8 @@ fi
 # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
