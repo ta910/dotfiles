@@ -43,25 +43,6 @@ if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
 fi
 zplug load
 
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then
-if [ $commands[gcloud] ]; then
-  gcloud() {
-    # Remove this function, subsequent calls will execute 'kubectl' directly
-    unfunction "$0"
-
-    # Load auto-completion
-    echo $0
-    echo "$@"
-    source '/Users/locona/google-cloud-sdk/completion.zsh.inc'
-
-    # Execute 'kubectl' binary
-    $0 "$@"
-
-  }
-fi
-
-
 ###################################################
 #################    setopt       #################
 ###################################################
@@ -112,7 +93,6 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ho="$HOME"
 alias -g gopus="$HOME/gopus"
-alias -g zdir="$HOME/.zsh/src"
 
 #-----------------------------------------------------
 # locona
@@ -124,6 +104,7 @@ alias -g lo="$LOCONA"
 DOTFILES=$LOCONA/dotfiles
 alias dotf="$DOTFILES"
 alias dotvim="$DOTFILES/vim"
+alias dotzsh="$DOTFILES/zsh"
 alias dotvimd="$DOTFILES/vim/vimrc.d"
 alias dotplugin="$DOTFILES/vim/vimrc.d/plugin"
 alias dotzsh="$DOTFILES/zsh"
@@ -280,8 +261,8 @@ alias yl='yarn lint'
 alias zsh-sync-aliases="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/*.zsh $HOME/.zsh/src/aliases"
 alias zsh-sync-dir="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/directories/*.zsh $HOME/.zsh/src/aliases/directories"
 alias zsh-sync-commands="ln -sf $HOME/w/github.com/locona/dotfiles/zsh/src/aliases/commands/*.zsh $HOME/.zsh/src/aliases/commands"
-alias ali='vim $HOME/.zsh/src/aliases.zsh'
-alias expo='vim $HOME/.zsh/src/exports.zsh'
+alias ali='vim $HOME/.zshrc'
+alias expo='vim $HOME/.zshenv'
 
 #-----------------------------------------------------
 # jq
@@ -416,7 +397,7 @@ alias k-namespace-current="kubectl config view | grep namespace"
 # eval "$(rbenv init -)"
 # eval "$(nodenv init -)"
 # eval "$(pyenv init -)"
-if (which zprof > /dev/null 2>&1) ;then
-  zprof
-fi
+# if (which zprof > /dev/null 2>&1) ;then
+  # zprof
+# fi
 
