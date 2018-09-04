@@ -16,6 +16,8 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 
 export GOPATH=/Users/locona/gopus
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/.rbenv/shims/bin
@@ -24,6 +26,7 @@ export PATH=$PATH:$PYENV_ROOT/bin
 export PATH=$PATH:/usr/local/etc/maven/bin
 export PATH=$PATH:/usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/bin
 export PATH=$PATH:$PYENV_ROOT/bin
+export PATH=$PATH/usr/local/opt/postgresql@9.6/bin
 
 
 # export MAVEN_OPTS="-Xmx4096m"
@@ -39,5 +42,3 @@ fi
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-
