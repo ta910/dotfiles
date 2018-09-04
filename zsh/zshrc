@@ -21,8 +21,6 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions', lazy:true
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "mollifier/anyframe"
-zplug "peco/peco", as:command, from:gh-r
 zplug "themes/robbyrussell", from:oh-my-zsh, lazy:true
 zplug "superbrothers/zsh-kubectl-prompt", use:kubectl.zsh
 
@@ -58,18 +56,6 @@ setopt complete_in_word
 setopt mark_dirs
 setopt menu_complete
 setopt prompt_subst
-
-###################################################
-#################    bindkey       ################
-###################################################
-# zstyle ":anyframe:selector:" use peco
-bindkey '^r' anyframe-widget-execute-history
-# bindkey '^xb' anyframe-widget-cdr
-# bindkey '^x^b' anyframe-widget-checkout-git-branch
-# bindkey '^xi' anyframe-widget-put-history
-# bindkey '^xg' anyframe-widget-cd-ghq-repository
-# bindkey '^xk' anyframe-widget-kill
-# bindkey '^xe' anyframe-widget-insert-git-branch
 
 ###################################################
 #############    source external files   ##########
