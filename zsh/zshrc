@@ -1,12 +1,16 @@
 # 補完
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
+
 bindkey -e # ターミナル上でのkeybind
 export ZPLUG_HOME=$HOME/.zplug
+export FPATH="$FPATH:$HOME/.zsh/src/functions"
 
 zmodload -i zsh/parameter
 zmodload -i zsh/mathfunc
 zmodload -i zsh/complist
 autoload -Uz +X promptinit && promptinit
-autoload -U +X bashcompinit && bashcompinit
 
 source ~/.zplug/init.zsh
 # zplug "b4b4r07/enhancd", use:init.sh
@@ -28,18 +32,11 @@ fi
 
 RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/locona/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/locona/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/locona/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Zplug init
 #------------------------------------i
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
     source ~/.zplug/init.zsh && zplug update --self
-fi
-if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
-   zcompile ~/.zshrc
 fi
 zplug load
 
@@ -122,6 +119,7 @@ alias nob="$LOCONA/noblesse"
 alias umb="$LOCONA/umbra"
 alias ven="$LOCONA/ventum"
 alias xio="$LOCONA/xio"
+alias drillcli="$LOCONA/drill-client"
 
 ## Go Respositories
 GOPUSLOCONA="$HOME/gopus/src/github.com/locona"
@@ -135,11 +133,19 @@ alias appe="$GOPUSLOCONA/apperror"
 alias gtopbazz="$GOPUSLOCONA/topbazz-api"
 alias gabt="$GOPUSLOCONA/abbit"
 alias gclarch="$GOPUSLOCONA/clarch"
+alias gojava="$GOPUSLOCONA/grpc-go-java"
 alias gign="$GOPUSLOCONA/ignis"
 unset GITHUB
 unset LOCONA
 unset DOTFILES
 unset GOPUSLOCONA
+
+#-----------------------------------------------------
+# creditengine
+#-----------------------------------------------------
+CREDIT_ENGINE="$HOME/w/github.com/CreditEngine"
+alias cesnoopy="$CREDIT_ENGINE/snoopy"
+alias cece="$CREDIT_ENGINE/CE_app"
 
 #-----------------------------------------------------
 # 3-shake
@@ -194,7 +200,7 @@ alias cdpbatch="$GOPUS3SHAKE/reckoner-cdp/batch"
 alias cdppr="$GOPUS3SHAKE/reckoner-cdp/prlauncher"
 alias cdpio="$GOPUS3SHAKE/reckoner-cdp/io"
 alias cdpreceiverout="$GOPUS3SHAKE/reckoner-cdp/receiver/outputexec"
-alias cdpreceiverquery="$GOPUS3SHAKE/reckoner-cdp/receiver/queryexec"
+alias cdpreceiverquery="$GOPUS3SHAKE/reckoner-cdp/receiver-queryexec"
 alias cdpin="$SHAKE/reckoner-infra/cdp"
 alias cdptracking="$GOPUS3SHAKE/reckoner-cdp/tracking"
 alias cdpindoc="$GOPUS3SHAKE/reckoner-cdp/infra/docker/compose"
@@ -224,13 +230,14 @@ alias -g XK='| xargs kill -9'
 #-----------------------------------------------------
 ## cmd
 alias hist="history"
-alias mv="mv -i"
 alias rm="rm -i" alias cp='cp -i'
 alias ps='ps aux'
 alias pst='pstree'
 alias w="watch"
 alias gs='gsed --in-place' # 's/target/converted/g' filepath
 alias gentime="export START=`echo "$(date -v -30H +%s)"` && export END=`echo "$(date -v -1M +%s)"`"
+alias ctags="`brew --prefix`/bin/ctags"
+
 
 ## ls
 alias ls='ls -GF'
@@ -351,7 +358,6 @@ if [ $commands[helm] ]; then
   source <(helm completion zsh)
 fi
 
-
 #-----------------------------------------------------
 # go
 #-----------------------------------------------------
@@ -363,7 +369,6 @@ alias glt="go test"
 #-----------------------------------------------------
 # kubectl
 #-----------------------------------------------------
-# source $HOME/.zsh/src/kubectl.zsh
 alias k='kubectl'
 alias ka='kubectl attach'
 alias kp='kubectl get po'
@@ -372,6 +377,8 @@ alias kpa='kubectl get po -a'
 alias kl='kubectl logs'
 alias kd='kubectl get deploy'
 alias ks='kubectl get svc'
+alias kload='source <(kubectl completion zsh)'
+
 
 alias k-conf-current-context="kubectl config current-context"
 alias k-conf-view="kubectl config view"
@@ -385,10 +392,47 @@ alias k-namespace-set="kubectl config set-context ${KUBE_CONTEXT} --namespace "
 alias k-namespace-current="kubectl config view | grep namespace"
 #-----------------------------------------------------
 
+##-----------------------------------------------------
+# CE
+#-----------------------------------------------------
+alias psql-snoopy="PGPASSWORD='snoopy_password' psql -h 127.0.0.1 -p5432 -Usnoopy_user -dsnoopy"
+alias psql-ce="PGPASSWORD='ce_password' psql -h 127.0.0.1 -p5432 -Uce_user -dce_local"
+alias psql-roster="PGPASSWORD='roster_password' psql -h 127.0.0.1 -p5432 -Uroster_user -droster_local2"
+
+##-----------------------------------------------------
+# CE
+#-----------------------------------------------------
+# fzf via Homebrew
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
+
+# fzf via local installation
+if [ -e ~/.fzf ]; then
+  _append_to_path ~/.fzf/bin
+  source ~/.fzf/shell/key-bindings.zsh
+  source ~/.fzf/shell/completion.zsh
+fi
+
+_has(){
+    command type "$1" > /dev/null 2>&1
+}
+
+# fzf + ag configuration
+if _has fzf && _has ag; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_DEFAULT_OPTS='
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  '
+fi
 
 # Direnv
 #-----------------------------------------------
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 # Anyenv
 #-----------------------------------------------
 # if [ -d $HOME/.anyenv ]; then
@@ -401,3 +445,9 @@ alias k-namespace-current="kubectl config view | grep namespace"
   # zprof
 # fi
 
+
+# if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
+   # zcompile ~/.zshrc
+# fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
