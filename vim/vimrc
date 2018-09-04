@@ -65,9 +65,9 @@ call s:load_file('plugin/autopep8')
   " call s:load_file('plugin/auto-ctags')
 " endif
 
-" if dein#tap('ctrlp.vim')
-  " call s:load_file('plugin/ctrlp')
-" endif
+if dein#tap('ctrlp.vim')
+  call s:load_file('plugin/ctrlp')
+endif
 if dein#tap('emmet-vim')
   call s:load_file('plugin/emmet-vim')
 endif

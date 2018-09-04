@@ -381,6 +381,7 @@ alias k-namespace-current="kubectl config view | grep namespace"
 ##-----------------------------------------------------
 # CE
 #-----------------------------------------------------
+alias psql-data_storage="PGPASSWORD='snoopy_password' psql -h 127.0.0.1 -p5432 -Usnoopy_user -ddata_storage"
 alias psql-snoopy="PGPASSWORD='snoopy_password' psql -h 127.0.0.1 -p5432 -Usnoopy_user -dsnoopy"
 alias psql-ce="PGPASSWORD='ce_password' psql -h 127.0.0.1 -p5432 -Uce_user -dce_local"
 alias psql-roster="PGPASSWORD='roster_password' psql -h 127.0.0.1 -p5432 -Uroster_user -droster_local2"
@@ -389,17 +390,17 @@ alias psql-roster="PGPASSWORD='roster_password' psql -h 127.0.0.1 -p5432 -Uroste
 # fzf
 #-----------------------------------------------------
 # fzf via Homebrew
-if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
-  source /usr/local/opt/fzf/shell/key-bindings.zsh
-  source /usr/local/opt/fzf/shell/completion.zsh
-fi
-
-# fzf via local installation
-if [ -e ~/.fzf ]; then
-  _append_to_path ~/.fzf/bin
-  source ~/.fzf/shell/key-bindings.zsh
-  source ~/.fzf/shell/completion.zsh
-fi
+# if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  # source /usr/local/opt/fzf/shell/key-bindings.zsh
+  # source /usr/local/opt/fzf/shell/completion.zsh
+# fi
+#
+# # fzf via local installation
+# if [ -e ~/.fzf ]; then
+  # _append_to_path ~/.fzf/bin
+  # source ~/.fzf/shell/key-bindings.zsh
+  # source ~/.fzf/shell/completion.zsh
+# fi
 
 # Direnv
 #-----------------------------------------------
