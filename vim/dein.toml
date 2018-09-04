@@ -86,8 +86,8 @@ repo = 'itchyny/lightline.vim'
 [[plugins]]
 repo = 'tomasr/molokai'
 
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
+# [[plugins]]
+# repo = 'ctrlpvim/ctrlp.vim'
 
 #  Appearance
 #-----------------------------------------------
@@ -98,14 +98,21 @@ repo = 'ctrlpvim/ctrlp.vim'
 repo   = 'osyo-manga/vim-anzu'
 on_map = ['<Plug>(anzu-']
 
-# [[plugins]]
-# repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
 #  Language
 #-----------------------------------------------
-[[plugins]]
-repo = 'mattn/benchvimrc-vim'
+# [[plugins]]
+# repo = 'mattn/benchvimrc-vim'
 
+
+# [[plugins]]
+# repo = 'w0rp/ale'
+# hook_add = 'call hook#add#ale#load()'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'

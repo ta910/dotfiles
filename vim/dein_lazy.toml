@@ -86,9 +86,9 @@ repo = 'scrooloose/nerdtree'
 repo  = 'vim-ruby/vim-ruby'
 on_ft = ['ruby']
 
-[[plugins]] # working with Ruby on Rails applications
-repo  = 'tpope/vim-rails'
-on_ft = ['ruby']
+# [[plugins]] # working with Ruby on Rails applications
+# repo  = 'tpope/vim-rails'
+# on_ft = ['ruby']
 
 [[plugins]] # syntax highlight for SCSS
 repo  = 'cakebaker/scss-syntax.vim'
@@ -129,6 +129,23 @@ on_ft = ['javascript']
 [[plugins]] # python support for vim
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
+hook_add = '''
+  let g:jedi#popup_on_dot = 0
+  let g:jedi#popup_select_first = 0
+  autocmd FileType python setlocal completeopt-=preview
+'''
+
+[[plugins]]
+repo = 'jsfaint/gen_tags.vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'lighttiger2505/gtags.vim'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'ludovicchabant/vim-gutentags'
+on_ft = ['python']
 
 [[plugins]]
 repo = 'JulesWang/css.vim'
@@ -161,3 +178,18 @@ on_ft = ['swift']
 [[plugins]] # extra plugin for golang
 repo  = 'fatih/vim-go'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'uarun/vim-protobuf'
+
+[[plugins]]
+repo = 'szw/vim-tags'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tfnico/vim-gradle'
+on_ft = ['gradle']

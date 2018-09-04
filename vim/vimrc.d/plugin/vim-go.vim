@@ -14,6 +14,8 @@ let g:go_gocode_autobuild = 1
 let g:go_list_type = "quickfix"
 let g:go_auto_type_info = 0
 
+nnoremap <C-d> :GoImports<CR>
+
 autocmd FileType go nmap <Space>gr <Plug>(go-run)
 autocmd FileType go nmap <Space>gb <Plug>(go-build)
 autocmd FileType go nmap <Space>gt <Plug>(go-test)

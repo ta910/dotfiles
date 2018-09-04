@@ -36,6 +36,7 @@ endif
 " set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 let &g:rtp .= ',' . g:env.path.dein_repo
+set rtp+=/usr/local/opt/fzf
 
 
 if dein#load_state(g:env.path.dein)
@@ -64,9 +65,9 @@ call s:load_file('plugin/autopep8')
   " call s:load_file('plugin/auto-ctags')
 " endif
 
-if dein#tap('ctrlp.vim')
-  call s:load_file('plugin/ctrlp')
-endif
+" if dein#tap('ctrlp.vim')
+  " call s:load_file('plugin/ctrlp')
+" endif
 if dein#tap('emmet-vim')
   call s:load_file('plugin/emmet-vim')
 endif
@@ -90,9 +91,6 @@ endif
  endif
 if dein#tap('nerdtree')
   call s:load_file('plugin/nerdtree')
-endif
-if dein#tap('unite')
-  call s:load_file('plugin/unite')
 endif
 if dein#tap('vim-clang')
   call s:load_file('plugin/vim-clang')
@@ -123,4 +121,10 @@ if dein#tap('vim-surround')
 endif
 if dein#tap('vim-tags')
   call s:load_file('plugin/vim-tags')
+endif
+" TODO
+call s:load_file('plugin/gen_tag')
+
+if dein#tap('fzf.vim')
+  call s:load_file('plugin/fzf')
 endif
