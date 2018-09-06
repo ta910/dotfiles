@@ -10,7 +10,7 @@ export FPATH="$FPATH:$HOME/.zsh/src/functions"
 zmodload -i zsh/parameter
 zmodload -i zsh/mathfunc
 zmodload -i zsh/complist
-autoload -Uz +X promptinit && promptinit
+# autoload -Uz +X promptinit && promptinit
 
 source ~/.zplug/init.zsh
 # zplug "b4b4r07/enhancd", use:init.sh
@@ -421,5 +421,6 @@ eval "$(direnv hook zsh)"
 # if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
    # zcompile ~/.zshrc
 # fi
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
