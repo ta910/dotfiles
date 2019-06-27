@@ -1,6 +1,6 @@
-set transparency=10
+set transparency=11
 " fonts
-set guifont=Monaco:h8
+set guifont=Monaco:h10
 
 " maximize window
 set lines=600 columns=9999

@@ -116,3 +116,6 @@ repo = 'Yggdroot/indentLine'
 #
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'

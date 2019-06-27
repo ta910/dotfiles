@@ -122,6 +122,9 @@ endif
 if dein#tap('vim-tags')
   call s:load_file('plugin/vim-tags')
 endif
+if dein#tap('vim-terraform')
+  call s:load_file('plugin/vim-terraform')
+endif
 " TODO
 call s:load_file('plugin/gen_tag')
 
